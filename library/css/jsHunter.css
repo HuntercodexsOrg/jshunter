@@ -1,0 +1,138 @@
+
+/***
+*
+* Library jsHunter Styles
+*
+*/
+
+/*General*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/*Editor and Writer*/
+.span-tab1 {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.span-tab2 {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+}
+.span-tab3 {
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+}
+.span-tab4 {
+    display: inline-block;
+    width: 160px;
+    height: 20px;
+}
+.span-tab5 {
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+}
+.span-tab6 {
+    display: inline-block;
+    width: 240px;
+    height: 20px;
+}
+.span-tab7 {
+    display: inline-block;
+    width: 280px;
+    height: 20px;
+}
+.obj-index {
+    color: #FF69B4;
+}
+.obj-value {
+    color: #1764c1;
+}
+.obj-index-typeof {
+    color: #919393;
+    font-style: italic;
+}
+/*Buttons*/
+.simulate-button-green,
+.simulate-button-blue,
+.simulate-button-orange,
+.simulate-button-purple,
+.simulate-button-black,
+.simulate-button-cyan,
+.simulate-button-red,
+.simulate-button-yellow,
+.simulate-button-pink,
+.simulate-button-silver {
+    display: inline-block;
+    min-width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #FAFAFA !important;
+    font-style: normal;
+    cursor: pointer;
+    background-color: #008B00;
+    box-shadow: 1px 2px 5px #454545;
+    margin: 3px 0px 3px 3px;
+    text-decoration: none !important;
+}
+.simulate-button-green img,
+.simulate-button-blue img,
+.simulate-button-orange img,
+.simulate-button-purple img,
+.simulate-button-black img,
+.simulate-button-cyan img,
+.simulate-button-red img,
+.simulate-button-yellow img,
+.simulate-button-pink img,
+.simulate-button-silver img {
+    text-align: center;
+    vertical-align: middle;
+}
+.simulate-button-blue {
+    background-color: #2344e7;
+}
+.simulate-button-orange {
+    background-color: #e77e23;
+}
+.simulate-button-purple {
+    background-color: #7e23e7;
+}
+.simulate-button-red {
+    background-color: #f5103e;
+}
+.simulate-button-black {
+    background-color: #000000;
+}
+.simulate-button-cyan {
+    background-color: #3199f5;
+}
+.simulate-button-yellow {
+    color: #333333;
+    background-color: #e0c012;
+}
+.simulate-button-pink {
+    background-color: #d80ae0;
+}
+.simulate-button-silver {
+    background-color: #595959;
+}
+.simulate-button-disabled {
+    color: #BBBBBB !important;
+    cursor: wait !important;
+    box-shadow: none !important;
+    background-color: #dedee0 !important;
+}
+/*Generic*/
+.back-dark-alpha {
+    background: rgba(1, 1, 1, 0.7) !important;
+}
+.back-white {
+    background: #FFFFFF !important;
+}

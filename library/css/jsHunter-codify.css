@@ -1,0 +1,473 @@
+
+/***
+*
+* Extension jsHunter-Codify Styles for Library jsHunter
+*
+*/
+
+/*Codify Styles*/
+.codes,
+.html,
+.css,
+.javascript,
+.php,
+.sql,
+.python,
+.java {
+    padding: 1%;
+    border: dashed #DEDEDE 1px;
+    font-family: "Courier New", "courier", sans-serif;
+    text-align: left !important;
+    width: 97%;
+    height: auto;
+    min-height: 100px;
+    max-height: 1000px;
+    margin: 20px auto;
+    font-style: normal !important;
+    overflow: auto;
+    color: #5DC5E6;
+}
+.line-number {
+    text-align: right !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    overflow: hidden !important;
+    font-family: inherit !important;
+    display: block !important;
+    width: 5% !important;
+    float: left !important;
+    border-right: solid 1px !important;
+    margin-right: 10px !important;
+}
+.line-code {
+    font-family: inherit !important;
+    padding-top: -10px !important;
+    display: block !important;
+    width: 90% !important;
+    float: left !important;
+}
+/*Dark*/
+.back-dark-code {
+    background: #2b2b2b !important;
+    color: #B6DAEF /*#de96d0*/ !important;
+}
+.back-dark-code .test,
+.back-dark-code .syntax-error {
+    color: #FF0000 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .line-number {
+    color: #d7a410 !important;
+    border-right: solid #d7a410 1px !important;
+}
+.back-dark-code .class {
+    color: #e216e9 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .classname {
+    color: #7fc6ec !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .set-get-methods {
+     color: #ca1a1a !important;
+     font-family: inherit !important;
+     font-weight: normal !important;
+ }
+.back-dark-code .constructor {
+    color: #9f0a97 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .function,
+.back-dark-code .loop-condition,
+.back-dark-code .return,
+.back-dark-code .variable-declare {
+    color: #d27510 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .param,
+.back-dark-code .number,
+.back-dark-code .variables {
+    color: #22a4fa !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .return {
+    font-weight: normal !important;
+}
+.back-dark-code .number {
+    color: #e340b5 !important;
+}
+.back-dark-code .function-name {
+    color: #ecf306 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .dom-elements,
+.back-dark-code .object-attribute,
+.back-dark-code .property {
+    color: #815eee !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .alias {
+    color: #d90b34 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-dark-code .value {
+    color: #1bf526 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .string,
+.back-dark-code .comment-in-block {
+    color: #61ae63 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .comments-inline {
+    color: #acacac !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-dark-code .boolean {
+    color: #d27510 !important;
+    font-family: inherit !important;
+}
+.back-dark-code .links {
+    color: #0fbfe9 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+    text-decoration: underline;
+}
+/*Blue*/
+.back-blue-code {
+    background: #102072 !important;
+    color: #d4c540 /*#de96d0*/ !important;
+}
+.back-blue-code .test,
+.back-blue-code .syntax-error {
+    color: #FF0000 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .line-number {
+    color: #cadbe7 !important;
+    border-right: solid #cadbe7 1px !important;
+}
+.back-blue-code .class {
+    color: #e216e9 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .classname {
+    color: #7fc6ec !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .set-get-methods {
+    color: #ca1a1a !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .constructor {
+    color: #9f0a97 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .function,
+.back-blue-code .loop-condition,
+.back-blue-code .return,
+.back-blue-code .variable-declare {
+    color: #d27510 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .param,
+.back-blue-code .number,
+.back-blue-code .variables {
+    color: #ff00bf !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .return {
+    font-weight: normal !important;
+}
+.back-blue-code .number {
+    color: #e9de0b !important;
+}
+.back-blue-code .function-name {
+    color: #e3ea22 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .dom-elements,
+.back-blue-code .object-attribute,
+.back-blue-code .property {
+    color: #815eee !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-blue-code .alias {
+    color: #d90b34 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-blue-code .value {
+    color: #1bf526 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-blue-code .string,
+.back-blue-code .comment-in-block {
+    color: #7ae0c3 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-blue-code .comments-inline {
+    color: #e3e1e1 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-blue-code .boolean {
+    color: #d27510 !important;
+    font-family: inherit !important;
+}
+.back-blue-code .links {
+    color: #0fbfe9 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+    text-decoration: underline;
+}
+/*Light*/
+.back-light-code {
+    background: #fcfcfc !important;
+    color: #33393e /*#de96d0*/ !important;
+}
+.back-light-code .test,
+.back-light-code .syntax-error {
+    color: #FF0000 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .line-number {
+    color: #3b4d5a !important;
+    border-right: solid #3b4d5a 1px !important;
+}
+.back-light-code .class {
+    color: #e216e9 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .classname {
+    color: #7fc6ec !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .set-get-methods {
+    color: #ca1a1a !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .constructor {
+    color: #9f0a97 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .function,
+.back-light-code .loop-condition,
+.back-light-code .return,
+.back-light-code .variable-declare {
+    color: #d27510 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .param,
+.back-light-code .number,
+.back-light-code .variables {
+    color: #22a4fa !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .return {
+    font-weight: normal !important;
+}
+.back-light-code .number {
+    color: #e340b5 !important;
+}
+.back-light-code .function-name {
+    color: #6a6d09 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .dom-elements,
+.back-light-code .object-attribute,
+.back-light-code .property {
+    color: #815eee !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .alias {
+    color: #d90b34 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-light-code .value {
+    color: #1bf526 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .string,
+.back-light-code .comment-in-block {
+    color: #61ae63 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .string {
+    color: #d23737 !important;
+}
+.back-light-code .comments-inline {
+    color: #acacac !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-light-code .boolean {
+    color: #d27510 !important;
+    font-family: inherit !important;
+}
+.back-light-code .links {
+    color: #0fbfe9 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+    text-decoration: underline;
+}
+/*Modern*/
+.back-modern-code {
+    background: #3b4354 !important;
+    color: #ddebf6 /*#de96d0*/ !important;
+}
+.back-modern-code .test,
+.back-modern-code .syntax-error {
+    color: #ef4848 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .line-number {
+    color: #916ee7 !important;
+    border-right: solid #916ee7 1px !important;
+}
+.back-modern-code .class {
+    color: #e216e9 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .classname {
+    color: #7fc6ec !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .set-get-methods {
+    color: #7fc6ec !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .constructor {
+    color: #d74bd0 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .function,
+.back-modern-code .loop-condition,
+.back-modern-code .return,
+.back-modern-code .variable-declare {
+    color: #718fea !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .param,
+.back-modern-code .number,
+.back-modern-code .variables {
+    color: #faa81b !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .return {
+    color: #faa81b !important;
+    font-weight: normal !important;
+}
+.back-modern-code .number {
+    color: #d477d2 !important;
+    font-weight: normal !important;
+}
+.back-modern-code .function-name {
+    color: #dce30d !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .dom-elements,
+.back-modern-code .object-attribute,
+.back-modern-code .property {
+    color: #815eee !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .alias {
+    color: #ff8602 !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+}
+.back-modern-code .value {
+    color: #1bf526 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .string,
+.back-modern-code .comment-in-block {
+    color: #1eae23 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .string{
+    color: #ff4f4f !important;
+}
+.back-modern-code .comments-inline {
+    color: #acacac !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+}
+.back-modern-code .boolean {
+    color: #7dec71 !important;
+    font-family: inherit !important;
+}
+.back-modern-code .links {
+    color: #0fbfe9 !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+    text-decoration: underline;
+}
+/*Remove codify styles: codifyless*/
+.codifyless {
+    padding: 1%;
+    border: dashed #DEDEDE 1px;
+    font-family: "Courier New", "courier", sans-serif;
+    text-align: left !important;
+    width: 97%;
+    height: auto;
+    min-height: 100px;
+    max-height: 500px;
+    margin: 20px auto;
+    font-style: normal !important;
+    overflow: auto;
+    background: #303442;
+    color: #99CEF5;
+}
+
+.codifyless .comments-inline {
+    color: #FFD700 !important;
+    font-family: inherit !important;
+}
