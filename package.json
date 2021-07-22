@@ -1,8 +1,8 @@
 {
   "name": "jshunter",
-  "version": "1.0.3",
-  "description": "Javascript Library for Developers",
-  "main": "jsHunter.js",
+  "version": "1.0.0",
+  "description": "Javascript Library for Developers...",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,8 @@
     "library",
     "plugin",
     "javascript",
-    "hunter"
+    "hunter",
+    "codexs"
   ],
   "author": "Hunter Codexs",
   "license": "MIT",
