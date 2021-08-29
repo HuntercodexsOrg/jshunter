@@ -1,26 +1,22 @@
 {
   "name": "jshunter",
-  "version": "1.0.0",
-  "description": "Javascript Library for Developers...",
-  "main": "index.js",
+  "version": "1.0.3",
+  "description": "Javascript Library for Developers",
+  "main": "jsHunter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huntercodexs/jshunter"
+    "url": "https://github.com/jereelton-devel/jsHunter"
   },
   "homepage": "http://www.jshunter-lib.com",
   "keywords": [
     "library",
     "plugin",
     "javascript",
-    "hunter",
-    "codexs"
+    "hunter"
   ],
-  "author": "Hunter Codexs",
-  "license": "MIT",
-  "maintainers": [
-    "Jereelton Teixeira - https://github.com/jereelton-devel"
-  ]
+  "author": "Jereelton Teixeira",
+  "license": "MIT"
 }
