@@ -1,9 +1,9 @@
 /*
 *
-* Project: jsHunter Codify
+* Project: jsHunter Codify For UI
 * Initial Date: 2019-11-01
 * License: MIT
-* Description: This is a free source code, please use as best as possible.
+* Description: This is a free source code, please use of the anyway better possible.
 *
 * This library should be used together with jsHunter and jsHunter-codify.css !
 *
@@ -11,9 +11,15 @@
 
 ;(function(){
 
+    /*
+     --------------------------------------------------------------------------------
+     - INITIALIZER OF CODIFY EXTENSION
+     --------------------------------------------------------------------------------
+     */
+
     try {
         if(!window.jH || !window.jsHunter || !jsHunter || !window.$$ || !window.$J) {
-            throw er = "[Exception]: Error on load jsHunter (Lib NOT FOUND) !";
+            throw "[Exception]: Error on load jsHunter (Lib Not Found) in codify extension !";
         }
     } catch (er) {
         console.exception( "Fatal Error: " + er);
@@ -1297,6 +1303,12 @@
         return (code) + "\n";
     }
 
+    /**
+     * @description Codify, create a snips set codes for various programs language
+     * @param {object} params (object: Mandatory)
+     * @returns {object} (object: All functions for this method)
+     * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
+     */
     jsHunter.prototype.codify = function (params) {
 
         try {
