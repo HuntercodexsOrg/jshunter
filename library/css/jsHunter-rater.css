@@ -1,0 +1,509 @@
+/***
+*
+* StyleSheet Extension jsHunter-rater for Library jsHunter
+*
+*/
+
+/*------------------------------------------------------------------------------------------*/
+/*Rater Component*/
+/*------------------------------------------------------------------------------------------*/
+
+.jh-rater-table {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box;
+    padding: 0 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    overflow: hidden !important;
+    border: none !important;
+    border-collapse: collapse;
+    position: relative;
+    font-family: verdana, serif;
+    float: left;
+    transition: all 0.8s ease-in-out;
+}
+
+.jh-rater-table-rater-item {
+     position: unset !important;
+     transition: none !important;
+     box-shadow: none !important;
+ }
+
+.jh-rater-table td {
+    border: none;
+}
+
+/*Image Preview Item Line*/
+
+.jh-rater-table .jh-rater-td-preview {
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.jh-rater-table .jh-rater-td-preview-image {
+    max-width: 80%;
+}
+
+.jh-rater-table .jh-rater-td-preview-price {
+    font-size: 160%;
+    font-weight: bold;
+    color: #29a5c0;
+}
+
+/*Title Line*/
+
+.jh-rater-table .jh-rater-tr-title {
+    font-weight: bold;
+    font-size: 150%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.jh-rater-tr-title .jh-rater-td-title {
+    padding: 1%;
+    text-align: left;
+    width: 75%;
+    box-sizing: border-box;
+    color: #29a5c0;
+    background: #FFFFFF;
+}
+
+.jh-rater-tr-title .jh-rater-td-result,
+.jh-rater-tr-menu .jh-rater-td-result {
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 300%;
+    min-width: 100px;
+    border: solid #29a5c0 1px;
+    color: #FFFFFF;
+    background: #29a5c0;
+}
+
+.jh-rater-tr-md-ratings .jh-rater-td-md-ratings {
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    width: 75%;
+    font-size: 100%;
+    box-sizing: border-box;
+    color: #29a5c0;
+}
+
+/*Line Message*/
+
+.jh-rater-table .jh-rater-tr-message {
+    font-weight: bold;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+.jh-rater-tr-message .jh-rater-td-message {
+    padding: 1%;
+    text-align: left;
+    text-decoration: none;
+    font-weight: normal;
+    width: 75%;
+    box-sizing: border-box;
+    color: #888888;
+    background: #FFFFFF;
+}
+
+/*Line Menu Stars*/
+
+.jh-rater-table .jh-rater-tr-menu {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+
+.jh-rater-tr-menu .jh-rater-td-menu {
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    width: 75%;
+    box-sizing: border-box;
+    color: #f8f2f2;
+}
+
+.jh-rater-td-menu .jh-rater-menu {
+    list-style: none;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.jh-rater-menu .jh-rater-menu-item {
+    width: 20%;
+    height: auto;
+    display: inline-block;
+}
+
+.jh-rater-menu-item .jh-rater-hidden {
+    display: none;
+}
+
+.jh-rater-menu-item .jh-rater-bt {
+    border: none;
+    width: auto;
+    height: auto;
+    cursor: none;
+    box-sizing: border-box;
+    font-size: 100%;
+    color: #454545;
+    background: none;
+}
+
+.jh-rater-menu-item .jh-rater-bt-fill {
+    cursor: pointer;
+    color: #ee6b26 !important;
+}
+
+.jh-rater-menu-item .jh-rater-bt-clear {
+    cursor: pointer;
+    color: #454545;
+}
+
+
+.jh-rater-menu-item .jh-rater-bt-clear:hover {
+    color: #ee6b26;
+}
+
+.jh-rater-star-hover {
+    fill: #EE6B26 !important;
+}
+
+.jh-rater-star-clicked {
+    fill: #29a5c0 !important;
+}
+
+.jh-rater-menu-item .jh-rater-bt-fill-disable {
+    cursor: default;
+    color: #ee6b26 !important;
+}
+
+.jh-rater-menu-item .jh-rater-bt-clear-disable {
+    cursor: default;
+    color: #454545;
+}
+
+.jh-rater-table .jh-rater-tr-menu .jh-rater-td-ratings {
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    width: 25%;
+    font-size: 80%;
+    box-sizing: border-box;
+    border-left: solid #29a5c0 1px;
+    color: #29a5c0;
+}
+
+.jh-rater-comment-table-results .jh-rater-comment-table-rating {
+    text-align: center;
+}
+
+.jh-rater-comment-table-results .jh-rater-comment-table-h3-result {
+    font-size: 350%;
+    color: #888888;
+}
+
+.jh-rater-comment-table-results .jh-rater-comment-table-h6-result {
+    font-size: 90%;
+    font-weight: normal;
+    color: #29a5c0;
+}
+
+.jh-rater-comment-table-results .jh-rater-comment-table-stars {
+    text-align: center;
+}
+
+/*Rater Mode*/
+
+#jh-rater-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#jh-rater-container #jh-rater-form {
+    width: 100%;
+    height: auto;
+}
+
+#jh-rater-form #jh-rater-table {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+
+#jh-rater-table #jh-rater-td-1 {
+    font-size: 150%;
+    font-weight: bold;
+    text-align: left;
+    color: #29a5c0;
+}
+
+#jh-rater-table .jh-rater-input {
+    width: 99%;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #888888;
+    border: solid #BABABA 1px;
+}
+
+#jh-rater-table #jh-rater-td-3 {
+    height: 50px;
+    vertical-align: bottom;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: left;
+    color: #29a5c0;
+}
+
+#jh-rater-table .jh-rater-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 210px;
+    font-size: 100%;
+    border: solid #BABABA 1px;
+    color: #858585;
+}
+
+#jh-rater-table #jh-rater-td-5 {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#jh-rater-table #jh-rater-menu {
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#jh-rater-table .jh-rater-menu-item {
+    float: left;
+    width: 20%;
+}
+
+#jh-rater-table .jh-rater-bt-fill-disable,
+#jh-rater-table .jh-rater-bt-clear-disable {
+    width: 100%;
+    cursor: default;
+    background: none;
+    height: 100%;
+    border: none;
+}
+
+#jh-rater-bt-send,
+#jh-rater-bt-cancel {
+    font-size: 100%;
+    font-weight: bold;
+    width: 30%;
+    margin: 5px;
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #FFFFFF;
+    box-shadow: 2px 3px 5px #888888;
+    background: #90c033;
+}
+
+#jh-rater-bt-cancel {
+    background: #ab1616;
+}
+
+#jh-rater-td-last {
+    text-align: center;
+    vertical-align: middle;
+    height: 70px;
+}
+
+/*Rater Comments*/
+
+.jh-rater-comment-table {
+    width: 95%;
+    max-width: 1000px;
+    height: auto;
+    padding: 1%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /*border: solid #888 1px;*/
+}
+
+/*Default Cel Settings*/
+.jh-rater-comment-table td {
+    height: auto;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-td-separator {
+    padding: 0;
+    border: none;
+    height: 30px;
+    border-top: solid #BABABA 1px;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-item {
+}
+
+.jh-rater-comment-table-item .jh-rater-comment-table-item-image {
+    text-align: center;
+    width: 200px;
+}
+
+.jh-rater-comment-table-item-image .jh-rater-comment-table-item-image-src {
+    width: auto;
+    max-width: 100%;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-item-name {
+    text-align: left;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-item-name h1 {
+    font-size: 30px;
+    color: #757575;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-item-name h3 {
+    font-weight: normal;
+    margin-top: -20px;
+    max-width: 80%;
+    color: #888888;
+}
+
+.jh-rater-comment-table .menu-progress,
+.jh-rater-comment-table .menu-progress-comment {
+    list-style: none;
+    width: 90%;
+    margin-left: 5%;
+    float: left;
+    clear: right;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+
+.jh-rater-comment-table .menu-progress-comment {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+
+.menu-progress .menu-progress-li,
+.menu-progress .menu-progress-li-bar,
+.menu-progress .menu-progress-li-qty,
+.menu-progress-comment .menu-progress-li,
+.menu-progress-comment .menu-progress-li-bar,
+.menu-progress-comment .menu-progress-li-qty {
+    text-align: center;
+    width: 3%;
+    float: left;
+}
+
+.menu-progress-comment .menu-progress-li,
+.menu-progress-comment .menu-progress-li-bar,
+.menu-progress-comment .menu-progress-li-qty {
+    text-align: left;
+}
+
+.menu-progress-li .menu-progress-li-bt {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    cursor: default;
+    border: none;
+    background: none;
+}
+
+.menu-progress .menu-progress-li-bar,
+.menu-progress-comment .menu-progress-li-bar {
+    width: 78%;
+    margin-right: 2px;
+    background: #DEDEDE;
+}
+
+.menu-progress-li-bar .menu-progress-li-bar-content {
+    width: auto;
+    height: 18px;
+    background: #90c033;
+}
+
+.menu-progress .menu-progress-li-qty,
+.menu-progress-comment .menu-progress-li-qty {
+    text-align: left;
+    color: #888888;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-title-h3 {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    color: #29a5c0;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-content-p {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #888888;
+}
+
+.jh-rater-comment-table .jh-rater-comment-table-likes {
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+}
+
+.jh-rater-comment-table .jh-rater-menu-likes {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    float: left;
+    clear: both;
+}
+
+.jh-rater-comment-table .jh-rater-menu-likes-li,
+.jh-rater-comment-table .jh-rater-menu-unlikes-li,
+.jh-rater-comment-table .jh-rater-menu-confused-li {
+    float: left;
+}
+
+.jh-rater-menu-likes-li .jh-rater-menu-likes-li-bt-like,
+.jh-rater-menu-unlikes-li .jh-rater-menu-likes-li-bt-unlike,
+.jh-rater-menu-confused-li .jh-rater-menu-likes-li-bt-confused {
+    border: none;
+    background: none;
+}
+
+.jh-rater-menu-likes-li .jh-rater-menu-likes-li-span,
+.jh-rater-menu-unlikes-li .jh-rater-menu-likes-li-span,
+.jh-rater-menu-confused-li .jh-rater-menu-likes-li-span {
+    display: block;
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-left: 5px;
+    color: #898989;
+}

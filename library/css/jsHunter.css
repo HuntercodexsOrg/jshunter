@@ -66,20 +66,21 @@
 .simulate-button-red,
 .simulate-button-yellow,
 .simulate-button-pink,
-.simulate-button-silver {
-    display: inline-block;
-    min-width: 150px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
+.simulate-button-silver,
+.simulate-button-silverlight {
+    display: inline-block !important;
+    min-width: 150px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+    font-weight: bold !important;
     color: #FAFAFA !important;
-    font-style: normal;
-    cursor: pointer;
-    background-color: #008B00;
-    box-shadow: 1px 2px 5px #454545;
-    margin: 3px 0px 3px 3px;
+    font-style: normal !important;
+    cursor: pointer !important;
+    box-shadow: 1px 2px 5px #454545 !important;
+    margin: 3px 0px 3px 3px !important;
     text-decoration: none !important;
 }
 .simulate-button-green img,
@@ -91,9 +92,13 @@
 .simulate-button-red img,
 .simulate-button-yellow img,
 .simulate-button-pink img,
-.simulate-button-silver img {
+.simulate-button-silver img,
+.simulate-button-silverlight img {
     text-align: center;
     vertical-align: middle;
+}
+.simulate-button-green {
+    background-color: #90c033;
 }
 .simulate-button-blue {
     background-color: #2344e7;
@@ -123,11 +128,39 @@
 .simulate-button-silver {
     background-color: #595959;
 }
+.simulate-button-silverlight {
+    color: #545454 !important;
+    background-color: #BABABA;
+}
 .simulate-button-disabled {
     color: #BBBBBB !important;
     cursor: wait !important;
     box-shadow: none !important;
     background-color: #dedee0 !important;
+}
+/*Paragraphs*/
+.simple-paragraph {
+    padding: 20px;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    overflow: hidden;
+    border: solid #dfcccc 1px;
+    color: #888888;
+    background: #e6e5ea;
+}
+.warning-paragraph {
+    padding: 20px;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    display: inline-block;
+    overflow: hidden;
+    border: solid #eeb975 1px;
+    color: #ce6b23;
+    background: #ffd267;
 }
 /*Generic*/
 .back-dark-alpha {

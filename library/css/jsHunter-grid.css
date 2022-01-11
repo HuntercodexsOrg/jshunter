@@ -1,0 +1,821 @@
+/***
+*
+* StyleSheet Extension jsHunter-grid for Library jsHunter
+*
+*/
+
+/*------------------------------------------------------------------------------------------*/
+/*Grid Component*/
+/*------------------------------------------------------------------------------------------*/
+
+/*GRID CONTAINER*/
+#jh-grid-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/*GRID CONTAINER CONTROLS*/
+#jh-grid-container #jh-grid-container-controls {
+    position: absolute;
+    /*z-index: 99;*/
+    width: 100%;
+    /*height: auto;*/
+    left: 0;
+    /*top: 8%;*/
+    min-height: 30%;
+    display: none;
+    padding-bottom: 1%;
+    text-align: center;
+    transition: all 0.7s ease-in-out;
+    box-shadow: -2px 19px 32px #454545;
+    color: #29a5c0;
+    background: #FFFFFF;
+
+    box-sizing: border-box;
+    z-index: 999999;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/*GRID CONTAINER FORM [NEW, SEARCH, IMPORT]*/
+#jh-grid-container #jh-grid-container-controls #jh-grid-new-control,
+#jh-grid-container #jh-grid-container-controls #jh-grid-search-control,
+#jh-grid-container #jh-grid-container-controls #jh-grid-import-control {
+    position: relative;
+    /*width: 100%;*/
+    height: auto;
+    padding: 0;
+    /*margin: 0;*/
+    display: none;
+    text-align: center;
+    box-sizing: border-box;
+
+    width: 64%;
+    background: #FFFFFF;
+    left: 50%;
+    margin-left: -32%;
+    top: 15%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 1px 2px 18px #434343;
+}
+
+/*GRID CONTAINER TITLE*/
+#jh-grid-container #jh-grid-container-controls #jh-grid-new-control .title,
+#jh-grid-container #jh-grid-container-controls #jh-grid-search-control .title,
+#jh-grid-container #jh-grid-container-controls #jh-grid-import-control .title {
+    width: 100%;
+    font-weight: bold;
+    text-align: center !important;
+    box-sizing: border-box;
+}
+
+#jh-grid-form-new-title,
+#jh-grid-form-search-title,
+#jh-grid-form-import-title {
+    height: 60px;
+    padding-top: 10px;
+}
+
+#jh-grid-container-controls-close {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-shadow: 1px 2px 3px #000000;
+}
+
+#jh-grid-form-import-line-progress-bar {
+    width: 60%;
+    position: relative;
+    margin-left: -30%;
+    left: 50%;
+}
+
+/*GRID FORM [NEW, SEARCH, IMPORT]*/
+#jh-grid-container #jh-grid-new-control #jh-grid-form-new,
+#jh-grid-container #jh-grid-search-control #jh-grid-form-search,
+#jh-grid-container #jh-grid-import-control #jh-grid-form-import {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0 0 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 250px;
+    max-height: 550px;
+    overflow: auto;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control {
+    width: auto;
+    height: auto;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control input[type=text],
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control select {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 5px 0 0 5px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    color: #575757;
+    border: solid #DADADA 1px;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control-icon {
+    width: 30px;
+    height: 32px;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 0 5px 5px 0;
+    color: #FFFFFF;
+    background: #1C768A;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button {
+    width: 110px !important;
+    text-align: center;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    line-height: 33px !important;
+    overflow: hidden !important;
+    height: 33px !important;
+    cursor: pointer !important;
+    margin-top: 50px !important;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button[type=button] {
+    float: right;
+    color: #FFFFFF !important;
+    background: #90c033 !important; /*#90c033*/
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button[type=button] svg {
+    margin-top: 4px;
+    margin-left: 10px;
+    max-width: 24px;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button[type=reset] {
+    float: left;
+    color: #FFFFFF !important;
+    background: #e3302a !important; /*#e3302a*/
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button span.button-icon {
+    display: inline-block;
+    width: 30px;
+    height: 33px;
+    font-size: 28px;
+    line-height: 28px;
+    float: left;
+    padding: 3px !important;
+    color: #FFFFFF !important;
+    background: #1c7589;
+    border-right: solid #FFFFFF 1px;
+}
+
+#jh-grid-container #jh-grid-container-controls .jh-grid-form-control button span.button-text {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    font-size: 15px;
+    line-height: 30px;
+    padding-right: 10px;
+    float: left;
+    margin-left: 10px;
+}
+
+/*GRID CONTROLS - HEADER*/
+#jh-grid-container #jh-grid-controls {
+    top: 0;
+    left: 50%;
+    height: 8%;
+    width: 100%;
+    padding: 1%;
+    overflow: hidden;
+    margin-left: -50%;
+    font-weight: bold;
+    position: relative;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    background: #29a5c0;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control {
+    float: left;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control #jh-grid-input-search,
+#jh-grid-container #jh-grid-controls .jh-grid-form-control #jh-grid-input-search-result {
+    width: 240px;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control #jh-grid-input-search-result {
+    margin: 0 !important;
+    border-radius: unset !important;
+}
+
+#jh-grid-search-result-enter {
+    margin: 0 !important;
+    border-radius: 5px 0 0 5px !important;
+}
+
+#jh-grid-search-result-enter label {
+    line-height: 30px;
+}
+
+#jh-grid-search-result-erase {
+    padding-right: 2px !important;
+    text-align: center !important;
+}
+
+#jh-grid-search-result-erase label {
+    line-height: 40px !important;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control input[type=text],
+#jh-grid-container #jh-grid-controls .jh-grid-form-control select {
+    width: 120px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px 0px 0px 5px;
+    border: solid #1C768A 1px;
+    color: #575757;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control button {
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 20px !important;
+    line-height: 25px !important;
+    overflow: hidden !important;
+    height: 33px !important;
+    cursor: pointer !important;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control button span.button-icon {
+    display: inline-block;
+    height: 33px;
+    width: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    float: left;
+    padding: 3px !important;
+    background: #1c7589;
+    border-right: solid #FFFFFF 1px;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control button span.button-text {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    font-size: 18px;
+    line-height: 30px;
+    padding-right: 10px;
+    float: left;
+    margin-left: 10px;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control button[type=submit] {
+    color: #FFFFFF !important;
+    background: #90c033 !important; /*#90c033*/
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control button[type=reset] {
+    color: #FFFFFF !important;
+    background: #e3302a !important; /*#e3302a*/
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-form-control-icon {
+    float: left;
+    width: 30px;
+    height: 33px;
+    font-size: 29px;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 0 5px 5px 0;
+    background: #1C768A;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control {
+    float: right;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button {
+    cursor: pointer !important;
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 20px !important;
+    line-height: 25px !important;
+    overflow: hidden !important;
+    height: 33px !important;
+    margin-left: 5px;
+    color: #FFFFFF;
+    background: #3c3f40;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-new {
+    color: #FFFFFF;
+    background: #146de7;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-search {
+    color: #FFFFFF;
+    background: #a6a6c0;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-import {
+    color: #FFFFFF;
+    background: #ff4400;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-export {
+    color: #FFFFFF;
+    background: #854bd2;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-reload {
+    color: #FFFFFF;
+    background: #17d011;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-previous {
+    color: #FFFFFF;
+    background: #c0b436;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-next {
+    color: #FFFFFF;
+    background: #e340cd;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-more {
+    color: #FFFFFF;
+    background: #4e139b;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-new:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-search:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-import:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-export:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-reload:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-previous:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-next:hover,
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button#jh-grid-more:hover {
+    color: #2b2b2b;
+    background: #edfcfc;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button span.button-icon {
+    display: inline-block;
+    height: 33px;
+    width: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    float: left;
+    padding: 3px !important;
+    background: #1c7589;
+    border-right: solid #FFFFFF 1px;
+}
+
+#jh-grid-container #jh-grid-controls .jh-grid-button-control button span.button-text {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    font-size: 12px;
+    line-height: 30px;
+    padding-right: 10px;
+    float: left;
+    margin-left: 10px;
+}
+
+#jh-grid-data-export-bts {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*GRID MORE CONTROL*/
+
+#jh-grid-more-control h3 {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #29a5c0;
+}
+
+#jh-grid-more-control ul {
+    padding: 10px;
+    list-style: none;
+}
+
+#jh-grid-more-control ul li {
+    width: 92%;
+    height: auto;
+    padding: 10px;
+    color: #232323;
+    border-bottom: solid #29a5c0 1px;
+}
+
+#jh-grid-more-control ul li span {
+    color: #888888;
+    display: block;
+    margin: 0 10px 10px 0;
+}
+
+#jh-grid-more-control ul li > span:nth-child(1) {
+    color: #757575;
+    font-size: 15px !important;
+}
+
+#jh-grid-more-control ul li > span:nth-child(3) {
+    font-size: 12px !important;
+}
+
+#jh-grid-more-control ul li button {
+    margin: 10px 10px 10px 0;
+    width: auto;
+    min-width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#jh-grid-more-control ul li .bt-green {
+    color: #FFFFFF;
+    background: #17d011;
+}
+
+#jh-grid-more-control ul li .bt-red {
+    color: #FFFFFF;
+    background: #e32020;
+}
+
+#jh-grid-more-control ul li .bt-orange {
+    color: #FFFFFF;
+    background: #ff4d00;
+}
+
+#jh-grid-more-control ul li .bt-blue {
+    color: #FFFFFF;
+    background: #15a4c4;
+}
+
+
+/*GRID CONTAINER CONTENT*/
+
+#jh-grid-container-content {
+    width: 100%;
+    height: 83%;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    color: #FFFFFF;
+    background: #f8f2f2;
+}
+
+/*GRID COLUMNS*/
+
+#jh-grid-container-content #jh-grid-columns-name {
+    width: auto;
+    /*min-width: 2645px;*//*TODO: VERIFICANDO*/
+    height: 50px;
+    white-space: nowrap;
+    overflow: visible;
+    color: #FFFFFF;
+    background: #888888;
+    border-top: solid #FFFFFF 1px;
+    border-left: solid #FFFFFF 1px;
+}
+
+#jh-grid-container-content #jh-grid-columns-name div {
+    width: auto;
+    height: 100%;
+    padding-top: 15px;
+    display: grid;
+    float: left;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-right: solid #FFFFFF 1px;
+    border-bottom: solid #FFFFFF 1px;
+    /*background: #717575;*/
+    background: linear-gradient(rgb(171, 167, 167) 30%, rgb(98, 100, 108) 86%);
+}
+
+#jh-grid-container-content #jh-grid-columns-name .jh-grid-action {
+    width: 180px !important;
+}
+
+#jh-grid-columns-name div .jh-grid-header-span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    /*color: #29a5c0;*/
+}
+
+#jh-grid-columns-name div .jh-grid-header-span:hover {
+    color: #FFD700;
+}
+
+/*GRID VALUES*/
+
+#jh-grid-container-content #jh-grid-container-values {
+    width: auto;
+    /*min-width: 2645px;*//*TODO: VERIFICANDO*/
+    height: 90%;
+    padding-bottom: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-y: auto;
+    color: #808283;
+    background: #c7c5c5;
+    border-left: solid #FFFFFF 1px;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values {
+    width: auto;
+    /*min-width: 2645px;*//*TODO: VERIFICANDO*/
+    height: 50px;
+    white-space: nowrap;
+    color: #808283;
+    background: #c7c5c5;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values div {
+    width: 200px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 10px;
+    display: grid;
+    float: left;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: break-spaces;
+    overflow: auto;
+    border-right: solid #FFFFFF 1px;
+    border-bottom: solid #FFFFFF 1px;
+    background: #ffffff;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-data-grid-val a {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1733c0;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-data-grid-val a:hover {
+    text-decoration: underline;
+
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-data-grid-val img {
+    width: 35px;
+    height: 23px;
+    margin: -2px auto;
+    border: none;
+    box-sizing: border-box;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .txt-money {
+    text-align: right;
+    padding-right: 20px;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action {
+    width: 180px !important;
+    white-space: unset;
+    text-align: center;
+    padding-top: 0;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action {
+    width: auto;
+    list-style: none;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action li {
+    display: inline-block;
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+    margin-top: 8px;
+    text-align: center;
+    /*background: #FFD700;*/
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action li button {
+    border: none;
+    font-size: 15px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    background: #000;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action li .jh-grid-action-update-icon {
+    background: #7bc039;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action li .jh-grid-action-delete-icon {
+    background: #e74242;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-values .jh-grid-action .jh-grid-menu-action li .jh-grid-action-read-icon {
+    background: #29a5c0;
+}
+
+/*QUERY ERROR TO GRID*/
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-query-error {
+    text-align: left;
+    color: #8a0d0d !important;
+    background: #ea9494 !important;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-query-no-results {
+    color: #29a5c0 !important;
+    background: #f8f2f2 !important;
+    box-sizing: border-box;
+    font-size: 200%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 15% 1% 1%;
+}
+
+/*GRID CHECKBOX CHECK-ALL UNCHECK-ALL*/
+
+.jh-grid-check {
+    white-space: unset !important;
+    padding-top: 8px !important;
+    font-size: 30px;
+    text-align: center !important;
+    width: 45px !important;
+}
+
+.jh-grid-check button#jh-grid-checkbox-all,
+.jh-grid-check button#jh-grid-uncheck-all {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 5px auto;
+    cursor: pointer;
+    font-size: 29px;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    color: #f8f2f2;
+    background: #1c7589;
+}
+
+.jh-grid-check button#jh-grid-uncheck-all {
+    display: none;
+}
+
+.jh-grid-check button#jh-grid-checkbox-all:hover,
+.jh-grid-check button#jh-grid-uncheck-all:hover {
+    color: #1c7589;
+    background: #f8f2f2;
+}
+
+.jh-grid-check a {
+    display: block;
+    width: 25px;
+    height: 20px;
+}
+
+.jh-grid-check input[type=checkbox] {
+    width: 15px;
+    height: 25px;
+}
+
+.jh-grid-item-link {
+    padding: 0;
+    margin: 0;
+    color: #232323;
+}
+
+#jh-grid-container-content .jh-grid-default-color div {
+    color: #807d8c !important;
+    background: #dceef1 !important;
+}
+
+#jh-grid-container-content #jh-grid-container-values .jh-grid-line-checked div {
+    color: #FFF !important;
+    background: #26c4fd !important;
+}
+
+/*GRID PAGINATE*/
+
+#jh-grid-container #jh-grid-paginate {
+    width: 100%;
+    height: 8%;
+    min-height: 80px;
+    position: absolute;
+    z-index: 99999;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    background: none;
+}
+
+/*Grid Themes*/
+
+/*Default Theme*/
+
+.jh-grid-container {
+    color: #29a5c0;
+    background: #ffffff;
+    border: solid #29a5c0 1px;
+}
+
+.jh-grid-container th {
+    padding: 0 25px;
+    height: 40px;
+    white-space: nowrap;
+    color: #FFFFFF;
+    background: #29a5c0;
+    border: solid #29a5c0 1px;
+}
+
+/*Dark Theme*/
+
+.jh-grid-container-dark {
+    color: #888888;
+    background: #28282a;
+    border: solid #83838a 1px;
+}
+
+/*Light Theme*/
+
+.jh-grid-container-light {
+    color: #888888;
+    background: #28282a;
+    border: solid #83838a 1px;
+}
+
+/*Modern Theme*/
+
+.jh-grid-container-modern {
+    color: #888888;
+    background: #b6b6b8;
+    border: solid #83838a 1px;
+}
+
+/*Discreet Theme*/
+
+.jh-grid-container-discreet {
+    color: #888888;
+    background: #28282a;
+    border: solid #83838a 1px;
+}
