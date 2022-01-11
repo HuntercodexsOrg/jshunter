@@ -835,6 +835,56 @@
             return {"run": _run, "all": _all, "ignore": _ignore, "race": _race};
         },
 
+        /**
+         * @description Redirect an request to any url destiny
+         * @param {string} url (string: Mandatory)
+         * @returns {null} (null: Alone)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         */
+        redirect: function(url) {
+            window.location.href = url;
+        },
+
+        /**
+         * @description Open, open a new tab window parametrized
+         * @param {object} params (object: Mandatory)
+         * @returns {object} (object: All functions for this method)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         */
+        open: function(params= {}) {
+            let toolbar = (params.toolbar === true) ? "yes" : "no";
+            let scrollbars = (params.scrollbars) ? "yes" : "no";
+            let resize = (params.resize) ? "yes" : "no";
+            let top_pos = params.top || 0;
+            let left_pos = params.left || 0;
+            let size = params.size || "500x500";
+            let width = size.split("x")[0];
+            let height = size.split("x")[1];
+            let features =
+                "toolbar="+toolbar+"," +
+                "scrollbars="+scrollbars+"," +
+                "resizable="+resize+"," +
+                "top="+top_pos+"," +
+                "left="+left_pos+"," +
+                "width="+width+"," +
+                "height="+height+"";
+
+            function _url(url) {
+                window.open(
+                    url,
+                    params.target,
+                    features);
+            }
+            function _write(data) {
+                let myWin = window.open(
+                    "",
+                    params.target,
+                    features);
+                myWin.document.write(data);
+            }
+            return {"url": _url, "write": _write};
+        },
+
         /*
          --------------------------------------------------------------------------------
          - TOPIC: PROPERTIES HANDLER

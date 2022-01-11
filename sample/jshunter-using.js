@@ -676,6 +676,43 @@ $$.loaded(function() {
         $$.serialize(args, false);
     })();
 
+    /**[DONE]
+     * Open
+     */
+    let open = 'off';
+    (function Open() {
+        if (open === 'off') return;
+
+        $$.open({
+            target: "_blank",
+            toolbar: false,
+            scrollbars: false,
+            resize: false,
+            top: 0,
+            left: 0,
+            size: "400x400"
+        }).url("https://www.jshunter-lib.com");
+
+        $$.open({
+            target: "_blank",
+            toolbar: true,
+            scrollbars: true,
+            resize: true,
+            top: 0,
+            left: 0,
+            size: "400x400"
+        }).write("jsHunter is a javascript library...");
+    })();
+
+    /**[DONE]
+     * Redirect
+     */
+    let redirect = 'off';
+    (function Redirect() {
+        if (redirect === 'off') return;
+        $$.redirect("http://www.jshunter-lib.com");
+    })();
+
     /**[TODO]
      * Translate [Extension]
      */
