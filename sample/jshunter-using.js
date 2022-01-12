@@ -67,7 +67,7 @@ $$.loaded(function() {
     })();
 
     /**[DONE]
-     * AJax (with restfull support)
+     * AJax (with restful support)
      */
     let ajax = 'off';
     (function Ajax() {
@@ -79,7 +79,7 @@ $$.loaded(function() {
             data: query_renderize.params,
             dataType: query_renderize.data_type,
             contentType: query_renderize.content_type,
-            restfull: false
+            restful: false
         }).get(
             function(resp) { /*Callback Success*/
                 /*Async Error Response*/

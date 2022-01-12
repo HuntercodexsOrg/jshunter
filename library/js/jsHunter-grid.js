@@ -1451,7 +1451,7 @@
                     data: query_renderize.params || "",
                     dataType: query_renderize.data_type || "json",
                     contentType: query_renderize.content_type || "application/json",
-                    restfull: false
+                    restful: false
                 }).get(function(resp) {
 
                     if (resp.error) {
@@ -1506,7 +1506,7 @@
                     data: query_paginate.params || "",
                     dataType: query_paginate.data_type || "json",
                     contentType: query_paginate.content_type || "application/json",
-                    restfull: false
+                    restful: false
                 }).get(function(resp) {
 
                     if ($$.has("error").in(resp)) {
@@ -1549,7 +1549,7 @@
                     data: query_paginate.params || "",
                     dataType: query_paginate.data_type || "json",
                     contentType: query_paginate.content_type || "application/json",
-                    restfull: false
+                    restful: false
                 }).get(function(resp) {
                     $$.exec(fn, resp);
                 }, function(err) {

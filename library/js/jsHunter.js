@@ -353,7 +353,9 @@
             let _str   = ($$.has('stringify').in(params)) ? params.stringify : false;
             let _cors  = ($$.has('cors').in(params)) ? params.cors : true;
             let _async = ($$.has('async').in(params)) ? params.async : true; /*default*/
-            let _rest  = ($$.has('restfull').in(params)) ? params.restfull : false;
+            let _rest  = ($$.has('restful').in(params)) ? params.restful : false;
+            let _auth  = ($$.has('authorization').in(params)) ? params.authorization : "";
+            let _cred  = ($$.has('credentials').in(params)) ? params.credentials : false;
 
             /**
              * Global Settings to pagedTable
@@ -435,36 +437,36 @@
                     }
                     /*GET: /api/user/:[123456]*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)?([0-9a-zA-Z]+)?$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_get_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*POST: Create*/
                 if (type === 'POST') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [POST] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [POST] !");
                     }
                     /*POST: /api/user {name: "Username", address: "Av. Enjoy 1234"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_post_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*PUT: Update*/
                 if (type === 'PUT') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [PUT] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [PUT] !");
                     }
                     /*PUT: /api/user/123456 {name: "New Username LastName", address: "New Address, 123567"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_put_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*DELETE*/
@@ -474,26 +476,26 @@
                     }
                     /*DELETE: /api/user/123456*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_delete_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*PATCH*/
                 if (type === 'PATCH') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [PATCH] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [PATCH] !");
                     }
                     if (_data.split('&').length > 1) {
                         $$.exception("ajax(): This method can be use only one parameter, see documentation !");
                     }
                     /*PATCH: /api/user/123456 {name: "NewName Username"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_patch_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
             }
@@ -524,12 +526,21 @@
                 /*Allow Cors*/
                 if (_cors) {
                     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                    xhr.withCredentials = true;
                 }
 
                 /*Content Type Send To Server*/
                 if (_ctype) {
                     xhr.setRequestHeader("Content-type", _ctype);
+                }
+
+                /*Authorization Send To Server*/
+                if (_auth !== "") {
+                    xhr.setRequestHeader("Authorization", _auth);
+                }
+
+                /*Send Credentials Data*/
+                if (_cred === true) {
+                    xhr.withCredentials = true;
                 }
 
                 /*Data Type From Server*/
@@ -700,6 +711,79 @@
                 receiver = response;
                 return response;
             }
+        },
+
+        /**
+         * @description Restful, to make an requests following restful rules
+         * @param {string} _url (string: Mandatory)
+         * @param {boolean} _async (boolean: Optional)
+         * @param {undefined} _auth (undefined: Optional)
+         * @returns {object} (object: All functions for this method)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         * @how-use
+         *     $$.restful("https://app.com/api/product", true, TOKEN).get();
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).get();
+         *     $$.restful("https://app.com/api/product", true, TOKEN).post({data/json});
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).put({data/json/full});
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).delete();
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).patch({data/json/partial});
+         */
+        restful: function(_url, _async = false, _auth = undefined) {
+            let args = {
+                url: _url,
+                async: _async,
+                cors: true,
+                restful: true,
+                dataType: "json",
+                contentType: "application/json",
+                stringify: true,
+                authorization: _auth,
+                credentials: false,
+            };
+
+            function _ok(response) {
+                if (!$$.isDefined(response) || $$.empty(response)) return null;
+                try {
+                    return JSON.parse(response);
+                } catch (er) {
+                    return response;
+                }
+            }
+
+            function _error(e) {
+                $$.log("restful() error => " + e).error();
+            }
+
+            function _get() {
+                $$.ajax(args).get(_ok, _error);
+            }
+
+            function _delete() {
+                $$.ajax(args).delete(_ok, _error);
+            }
+
+            function _post(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).post(_ok, _error);
+            }
+
+            function _put(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).put(_ok, _error);
+            }
+
+            function _patch(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).patch(_ok, _error);
+            }
+
+            return {
+                "get": _get,
+                "post": _post,
+                "put": _put,
+                "delete": _delete,
+                "patch": _patch
+            };
         },
 
         /**

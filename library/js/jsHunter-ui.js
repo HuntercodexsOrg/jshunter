@@ -5593,7 +5593,7 @@
                 data: query_renderize.params,
                 dataType: query_renderize.data_type,
                 contentType: query_renderize.content_type,
-                restfull: false
+                restful: false
             }).get(function(resp) {
 
                 if (resp.error) {
