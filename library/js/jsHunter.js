@@ -1422,12 +1422,63 @@
             let get_fields = null;
             let tmp = [];
             let files = [];
-            let json_serial = {};
-            let files_serial = {};
             let serialized = "";
+            let pusher = {};
+            let pusher_files = {};
+            let json_assert = {};
+            let files_assert = {};
 
             function dataPrepare(file = false) {
-                (function huntTargets() {
+
+                function populateArray(_key) {
+                    for (let i = 0; i < tmp.length; i++) {
+                        for (let j = 0; j < tmp[i].length; j++) {
+                            let _key_ = (tmp[i][j].name || tmp[i][j].id).replace(/[\["\]]/gi, "");
+                            if (_key_ === _key) {
+                                if (tmp[i][j].type === 'radio' || tmp[i][j].type === 'checkbox') {
+                                    if (tmp[i][j].checked === true) {
+                                        pusher[_key].push(tmp[i][j].value);
+                                    }
+                                } else if (tmp[i][j].value !== "") {
+                                    pusher[_key].push(tmp[i][j].value);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                function assertArray() {
+                    Object.keys(pusher).forEach(function(item, index, array) {
+                        if (pusher[item].length === 1) {
+                            json_assert[item] = pusher[item][0];
+                        } else if (pusher[item].length > 1) {
+                            json_assert[item] = pusher[item];
+                        }
+                    });
+                }
+
+                function populateArrayFiles(_key) {
+                    for (let i = 0; i < files.length; i++) {
+                        for (let j = 0; j < files[i].length; j++) {
+                            let _key_ = (files[i][j].name || files[i][j].id).replace(/[\["\]]/gi, "");
+                            if (_key_ === _key && files[i][j].files[0] !== "") {
+                                pusher_files[_key].push(files[i][j].files[0]);
+                            }
+                        }
+                    }
+                }
+
+                function assertArrayFiles() {
+                    Object.keys(pusher_files).forEach(function(item, index, array) {
+                        if (pusher_files[item].length === 1) {
+                            files_assert[item] = pusher_files[item][0];
+                        } else if (pusher_files[item].length > 1) {
+                            files_assert[item] = pusher_files[item];
+                        }
+                    });
+                }
+
+                (function captureTargets() {
                     try {
                         /*Input*/
                         targets.forEach(function (item, index, array) {
@@ -1459,41 +1510,49 @@
                     }
                 })();
 
-                (function workInFoundInputs() {
+                (function mapperTargets() {
                     if (tmp.length === 0) return;
 
-                    tmp.forEach(function (item, index, array) {
-                        for (let i = 0; i < item.length; i++) {
-                            json_serial[item[i].name || item[i].id] = item[i].value;
+                    tmp.forEach(function(it, id, ar) {
+                        for (let i = 0; i < it.length; i++) {
+                            let kn = (it[i].name || it[i].id).replace(/[\["\]]/gi, "");
+                            pusher[kn] = [];
+                            populateArray(kn);
                         }
                     });
+
+                    assertArray();
                 })();
 
-                (function workInFoundFiles() {
+                (function mapperTargetsFiles() {
                     if (files.length === 0) return;
 
-                    files.forEach(function (item, index, array) {
-                        for (let i = 0; i < item.length; i++) {
-                            files_serial[item[i].name || item[i].id] = item[i].files[0];
+                    files.forEach(function(it, id, ar) {
+                        for (let i = 0; i < it.length; i++) {
+                            let kn = (it[i].name || it[i].id).replace(/[\["\]]/gi, "");
+                            pusher_files[kn] = [];
+                            populateArrayFiles(kn);
                         }
                     });
+
+                    assertArrayFiles();
                 })();
             }
 
             function _json() {
                 dataPrepare();
-                return json_serial;
+                return json_assert;
             }
 
             function _stringify() {
                 dataPrepare();
-                return JSON.stringify(json_serial);
+                return JSON.stringify(json_assert);
             }
 
             function _serialize(enc = false) {
                 dataPrepare();
-                Object.keys(json_serial).forEach(function(item, index, array) {
-                    serialized += "&" + item.toString() + "=" + json_serial[item];
+                Object.keys(json_assert).forEach(function(item, index, array) {
+                    serialized += "&" + item.toString() + "=" + json_assert[item];
                 });
 
                 if (enc === true) {
@@ -1519,12 +1578,16 @@
                     let fd = new FormData();
                     fd.append("action_name", "send_files")
 
-                    Object.keys(json_serial).forEach(function (item, index, array) {
-                        fd.append(item.toString(), json_serial[item]);
+                    Object.keys(json_assert).forEach(function (item, index, array) {
+                        fd.append(item.toString(), json_assert[item]);
                     });
 
-                    Object.keys(files_serial).forEach(function (item, index, array) {
-                        fd.append(item.toString(), files_serial[item]);
+                    Object.keys(files_assert).forEach(function (item, index, array) {
+                        for (let i = 0; i < files_assert[item].length; i++) {
+                            if (files_assert[item][i]) {
+                                fd.append(item.toString()+"-"+i, files_assert[item][i]);
+                            }
+                        }
                     });
 
                     return fd;
