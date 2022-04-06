@@ -442,28 +442,32 @@ $$.loaded(function() {
     /**[DONE]
      * Form [Serialized]
      */
-    let form = 'off';
+    let form = 'on';
     (function Form() {
         if (form === 'off') return;
 
         jH("#bt-test-form").on('click', function() {
 
             let data_json = $$.form('#app-form-test').json();
+            console.log("JSON");
             console.log(data_json);
 
             let data_str = $$.form('#app-form-test').stringify();
+            console.log("STRINGIFY");
             console.log(data_str);
 
             let data_serial1 = $$.form('#app-form-test').serialize(true); /*true, false*/
             let data_serial2 = $$.form('#app-form-test').serialize(false); /*true, false*/
+            console.log("SERIALIZE-ENC");
             console.log(data_serial1);
+            console.log("SERIALIZE");
             console.log(data_serial2);
 
-            let data_form_sub = $$.form('#app-form-test').attach("./api/data/files.php", false); /*send files*/
+            /*let data_form_sub = $$.form('#app-form-test').attach("./api/data/files.php", false); /!*send files*!/
 
-            let data_form = $$.form('#app-form-test').attach(); /*send files*/
+            let data_form = $$.form('#app-form-test').attach(); /!*send files*!/*/
 
-            $$.ajax({
+            /*$$.ajax({
                 url: "./api/data/files.php",
                 data: data_form,
                 dataType: 'json'
@@ -473,7 +477,7 @@ $$.loaded(function() {
                 },
                 function(err) {
                     console.log("ERROR", err);
-                });
+                });*/
         });
     })();
 
@@ -2006,7 +2010,7 @@ $$.loaded(function() {
     /**[WORK]
      * Grid
      */
-    let grid = 'on';
+    let grid = 'off';
     (function Grid() {
         if (grid === 'off') return;
 

@@ -1418,6 +1418,7 @@
             let targets = [
                 "checkbox", "color", "date", "datetime-local", "email", "file", "hidden", "image", "month",
                 "number", "password", "radio", "range", "search", "tel", "text", "time", "url", "week",
+                "label", "fieldset", "button"
             ];
             let get_fields = null;
             let tmp = [];
@@ -1502,6 +1503,11 @@
                         }
                         /*Select*/
                         get_fields = document.querySelectorAll(form + " select");
+                        if (get_fields.length > 0) {
+                            tmp.push(get_fields);
+                        }
+                        /*Buttons*/
+                        get_fields = document.querySelectorAll(form + " button");
                         if (get_fields.length > 0) {
                             tmp.push(get_fields);
                         }
