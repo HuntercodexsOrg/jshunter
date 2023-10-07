@@ -1563,7 +1563,7 @@
     /**[THEME]
      * @description Confirm, dialog box to confirm operations
      * @param {object} params (object: Mandatory)
-     * @param {string} callback (string[:function]: Mandatory)
+     * @param {function} callback (function: Mandatory)
      * @param {string} args (mixed: Optional)
      * @returns {null} (null: Alone)
      * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
@@ -5593,7 +5593,7 @@
                 data: query_renderize.params,
                 dataType: query_renderize.data_type,
                 contentType: query_renderize.content_type,
-                restfull: false
+                restful: false
             }).get(function(resp) {
 
                 if (resp.error) {

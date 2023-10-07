@@ -1,10 +1,70 @@
 
+//http://192.168.15.13:38081/jshunter/sample/index.html
+
+let current_page = (window.location.href).toString().split("/").pop();
+
+/*FUNCTIONS*/
+let data_samples = 'off';
+let set_theme = 'off';
+let ajax = 'off';
+let clone = 'off';
+let requester = 'off';
+let on_submit = 'off';
+let sort = 'off';
+let local_storage = 'off';
+let copy_paste = 'off';
+let has_key = 'off';
+let insert = 'off';
+let promise = 'off';
+let password = (current_page === 'password.html') ? 'on' : 'off';
+let rand = 'off';
+let repeat = 'off';
+let form = 'off';
+let md5 = 'off';
+let basename = 'off';
+let matcher = 'off';
+let bubble = 'off';
+let optimize = 'off';
+let array_map = 'off';
+let csv_map = (current_page === 'csv_map.html') ? 'on' : 'off';
+let serialize = 'off';
+let open = 'off';
+let redirect = 'off';
+let translate = 'off';
+
+/*COMPONENTS AND VISUAL EFFECTS*/
+let presenter = (current_page === 'presenter.html') ? 'on' : 'off';
+let typist = (current_page === 'typist.html') ? 'on' : 'off';
+let alert = (current_page === 'alert.html') ? 'on' : 'off';
+let confirm = (current_page === 'confirm.html') ? 'on' : 'off';
+let tooltip = (current_page === 'tooltip.html') ? 'on' : 'off';
+let modal_theme = (current_page === 'modal_theme.html') ? 'on' : 'off';
+let toaster = (current_page === 'toaster.html') ? 'on' : 'off';
+let notifier = (current_page === 'notifier.html') ? 'on' : 'off';
+let slider = (current_page === 'slider.html') ? 'on' : 'off';
+let slider_box = (current_page === 'slider_box.html') ? 'on' : 'off';
+let viewer = (current_page === 'viewer.html') ? 'on' : 'off';
+let gallery = (current_page === 'gallery.html') ? 'on' : 'off';
+let paginate = (current_page === 'paginate.html') ? 'on' : 'off';
+let jumper = (current_page === 'jumper.html') ? 'on' : 'off';
+let smart_pager = (current_page === 'smart_pager.html') ? 'on' : 'off';
+let paged_table = (current_page === 'paged_table.html') ? 'on' : 'off';
+let icons = (current_page === 'icons.html') ? 'on' : 'off';
+let queue = (current_page === 'queue.html') ? 'on' : 'off';
+let rater = (current_page === 'rater.html') ? 'on' : 'off';
+let sticker = (current_page === 'sticker.html') ? 'on' : 'off';
+let rollup = (current_page === 'rollup.html') ? 'on' : 'off';
+let file = (current_page === 'file.html') ? 'on' : 'off';
+let draggable = (current_page === 'draggable.html') ? 'on' : 'off';
+let progress = (current_page === 'progress.html') ? 'on' : 'off';
+let grid = (current_page === 'grid.html') ? 'on' : 'off';
+let select_cloner = (current_page === 'select_cloner.html') ? 'on' : 'off';
+
 $$.loaded(function() {
 
     /**[MODEL]
      * Data Samples
      */
-    let data_samples = 'off';
     (function DataSamples() {
         if (data_samples === 'off') return;
 
@@ -60,16 +120,14 @@ $$.loaded(function() {
     /**[DONE]
      * Set Theme
      */
-    let set_theme = 'off';
     (function SetTheme() {
         if (set_theme === 'off') return;
         $$.setTheme('light');
     })();
 
     /**[DONE]
-     * AJax (with restfull support)
+     * AJax (with restful support)
      */
-    let ajax = 'off';
     (function Ajax() {
         if (ajax === 'off') return;
         $$.ajax({
@@ -79,7 +137,7 @@ $$.loaded(function() {
             data: query_renderize.params,
             dataType: query_renderize.data_type,
             contentType: query_renderize.content_type,
-            restfull: false
+            restful: false
         }).get(
             function(resp) { /*Callback Success*/
                 /*Async Error Response*/
@@ -120,7 +178,6 @@ $$.loaded(function() {
     /**[DONE]
      * Clone
      */
-    let clone = 'off';
     (function Clone() {
         if (clone === 'off') return;
         $$.clone('#jh-paged-table-tbody-tr-0').into("#jh-paged-table-tbody");
@@ -129,7 +186,6 @@ $$.loaded(function() {
     /**[DONE]
      * Requester
      */
-    let requester = 'off';
     (function Requester() {
         if (requester === 'off') return;
         console.log($$.requester("./api/data/index.php?initial=1&final=10000&db=csv"));
@@ -138,7 +194,6 @@ $$.loaded(function() {
     /**[DONE]
      * On Submit
      */
-    let on_submit = 'off';
     (function OnSubmit() {
         if (on_submit === 'off') return;
         jH("#jh-grid-form").on('submit', function() {
@@ -150,7 +205,6 @@ $$.loaded(function() {
     /**[DONE]
      * Sort
      */
-    let sort = 'off';
     (function Sort() {
         if (sort === 'off') return;
         /*Number*/ /*[DONE]*/
@@ -263,7 +317,6 @@ $$.loaded(function() {
     /**[DONE]
      * LocalStorage: $$.storage
      */
-    let local_storage = 'off';
     (function LocalStorage() {
         if (local_storage === 'off') return;
         $$.storage('@dockerized/test_1').set('test123');
@@ -274,7 +327,6 @@ $$.loaded(function() {
     /**[DONE]
      * Copy And Paste: $$.copy
      */
-    let copy_paste = 'off';
     (function CopyPaste() {
         if (copy_paste === 'off') return;
         /*Sample Strucutre*/
@@ -290,7 +342,6 @@ $$.loaded(function() {
     /**[DONE]
      * Has (key in object)
      */
-    let has_key = 'off';
     (function HasKey() {
         if (has_key === 'off') return;
         let obj = {name:"test", total: 1000};
@@ -300,7 +351,6 @@ $$.loaded(function() {
     /**[DONE]
      * Insert [before,after]
      */
-    let insert = 'off';
     (function Insert() {
         if (insert === 'off') return;
         let _new_element_ = $$.create({
@@ -316,7 +366,6 @@ $$.loaded(function() {
     /**[DONE]
      * Promise
      */
-    let promise = 'off';
     (function Promise() {
         if (promise === 'off') return;
         let resp = true;
@@ -400,7 +449,6 @@ $$.loaded(function() {
     /**[DONE]
      * Password
      */
-    let password = 'off';
     (function Password() {
         if (password === 'off') return;
         $$.password("#jh-pass").mouseover();
@@ -410,7 +458,6 @@ $$.loaded(function() {
     /**[DONE]
      * Rand
      */
-    let rand = 'off';
     (function Rand() {
         if (rand === 'off') return;
         $$.rand(0, 100).inclusive();
@@ -420,7 +467,6 @@ $$.loaded(function() {
     /**[DONE]
      * Repeat
      */
-    let repeat = 'off';
     (function Repeat() {
         if (repeat === 'off') return;
 
@@ -442,28 +488,31 @@ $$.loaded(function() {
     /**[DONE]
      * Form [Serialized]
      */
-    let form = 'off';
     (function Form() {
         if (form === 'off') return;
 
         jH("#bt-test-form").on('click', function() {
 
             let data_json = $$.form('#app-form-test').json();
+            console.log("JSON");
             console.log(data_json);
 
             let data_str = $$.form('#app-form-test').stringify();
+            console.log("STRINGIFY");
             console.log(data_str);
 
             let data_serial1 = $$.form('#app-form-test').serialize(true); /*true, false*/
             let data_serial2 = $$.form('#app-form-test').serialize(false); /*true, false*/
+            console.log("SERIALIZE-ENC");
             console.log(data_serial1);
+            console.log("SERIALIZE");
             console.log(data_serial2);
 
-            let data_form_sub = $$.form('#app-form-test').attach("./api/data/files.php", false); /*send files*/
+            /*let data_form_sub = $$.form('#app-form-test').attach("./api/data/files.php", false); /!*send files*!/
 
-            let data_form = $$.form('#app-form-test').attach(); /*send files*/
+            let data_form = $$.form('#app-form-test').attach(); /!*send files*!/*/
 
-            $$.ajax({
+            /*$$.ajax({
                 url: "./api/data/files.php",
                 data: data_form,
                 dataType: 'json'
@@ -473,14 +522,13 @@ $$.loaded(function() {
                 },
                 function(err) {
                     console.log("ERROR", err);
-                });
+                });*/
         });
     })();
 
     /**[DONE]
      * MD5
      */
-    let md5 = 'off';
     (function MD5() {
         if (md5 === 'off') return;
         $$.log($$.md5("test")).print("orange");
@@ -489,7 +537,6 @@ $$.loaded(function() {
     /**[DONE]
      * Basename
      */
-    let basename = 'off';
     (function Basename() {
         if (basename === 'off') return;
         $$.log($$.basename("test")).print("yellowgreen");
@@ -503,7 +550,6 @@ $$.loaded(function() {
     /**[DONE]
      * Matcher
      */
-    let matcher = 'off';
     (function Matcher() {
         if (matcher === 'off') return;
 
@@ -553,7 +599,6 @@ $$.loaded(function() {
     /**[DONE]
      * Bubble
      */
-    let bubble = 'off';
     (function Bubble() {
         if (bubble === 'off') return;
 
@@ -569,7 +614,6 @@ $$.loaded(function() {
     /**[DONE]
      * Optimize
      */
-    let optimize = 'off';
     (function Optimize() {
         if (optimize === 'off') return;
 
@@ -593,7 +637,6 @@ $$.loaded(function() {
     /**[DONE]
      * Array Map
      */
-    let array_map = 'off';
     (function ArrayMap() {
         if (array_map === 'off') return;
 
@@ -615,7 +658,6 @@ $$.loaded(function() {
     /**[DONE]
      * CSV Map
      */
-    let csv_map = 'off';
     (function CSVMap() {
         if (csv_map === 'off') return;
 
@@ -663,7 +705,6 @@ $$.loaded(function() {
     /**[DONE]
      * Serialize [Extension]
      */
-    let serialize = 'off';
     (function Serialize() {
         if (serialize === 'off') return;
 
@@ -676,10 +717,44 @@ $$.loaded(function() {
         $$.serialize(args, false);
     })();
 
+    /**[DONE]
+     * Open
+     */
+    (function Open() {
+        if (open === 'off') return;
+
+        $$.open({
+            target: "_blank",
+            toolbar: false,
+            scrollbars: false,
+            resize: false,
+            top: 0,
+            left: 0,
+            size: "400x400"
+        }).url("https://www.jshunter-lib.com");
+
+        $$.open({
+            target: "_blank",
+            toolbar: true,
+            scrollbars: true,
+            resize: true,
+            top: 0,
+            left: 0,
+            size: "400x400"
+        }).write("jsHunter is a javascript library...");
+    })();
+
+    /**[DONE]
+     * Redirect
+     */
+    (function Redirect() {
+        if (redirect === 'off') return;
+        $$.redirect("http://www.jshunter-lib.com");
+    })();
+
     /**[TODO]
      * Translate [Extension]
      */
-    let translate = 'off';
     (function Translate() {
         if (translate === 'off') return;
         $$.translate("Missing Title").to("pt-br");
@@ -692,7 +767,6 @@ $$.loaded(function() {
     /**[DONE]
      * Presenter
      */
-    let presenter = 'off';
     (function Presenter() {
         if (presenter === 'off') return;
         $$.presenter(
@@ -704,20 +778,19 @@ $$.loaded(function() {
                 effect: "fade" /*fade,blink,top-down*/
             },
             function(rsp) {
-                $$.alert("OK: " + rsp);
+                $$.alert("Presenter say: " + rsp);
             },
-            'test');
+            'This was a sample');
     })();
 
     /**[DONE]
      * Typist
      */
-    let typist = 'off';
     (function Typist() {
         if (typist === 'off') return;
         $$.typist({
             target: "#jh-typist-container",
-            time: 40,
+            time: 70,
             text: "Text to test a typist of the jsHunter",
             loop: true,
             control_loop: 5000
@@ -727,13 +800,12 @@ $$.loaded(function() {
     /**[DONE]
      * Alert
      */
-    let alert = 'off';
     (function Alert() {
         if (alert === 'off') return;
         $$.alert({
             title: "Error",
             text: "Select a valid CONFIGURATION SETUP (true|false) !",
-            theme: "dark", /*default,dark,light*/
+            theme: "default", /*default,dark,light*/
             button: "OK"
         });
     })();
@@ -741,13 +813,12 @@ $$.loaded(function() {
     /**[DONE]
      * Confirm
      */
-    let confirm = 'off';
     (function Confirm() {
         if (confirm === 'off') return;
         $$.confirm({
             title: "Warning",
             question: "Are you sure that you want to save the data ?",
-            theme: "dark", /*default,dark,light*/
+            theme: "default", /*default,dark,light*/
             buttons: ["Yes", "No"]
         }, function(args){
             $$.alert("OK: " + args);
@@ -757,7 +828,6 @@ $$.loaded(function() {
     /**[DONE]
      * Tooltip
      */
-    let tooltip = 'off';
     (function Tooltip() {
         if (tooltip === 'off') return;
         $$.tooltip({
@@ -785,7 +855,6 @@ $$.loaded(function() {
     /**[DONE]
      * modalTheme
      */
-    let modal_theme = 'off';
     (function ModalTheme() {
         if (modal_theme === 'off') return;
         $$.modalTheme({
@@ -805,7 +874,6 @@ $$.loaded(function() {
     /**[DONE]
      * Toaster
      */
-    let toaster = 'off';
     (function Toaster() {
         if (toaster === 'off') return;
         let short_text = "" +
@@ -880,7 +948,6 @@ $$.loaded(function() {
     /**[DONE]
      * Notifier
      */
-    let notifier = 'off';
     (function Notifier() {
         if (notifier === 'off') return;
         let loremIpsum = "" +
@@ -905,7 +972,6 @@ $$.loaded(function() {
     /**[DONE]
      * Slider
      */
-    let slider = 'off';
     (function Slider() {
         if (slider === 'off') return;
         /*Sample Structure*/
@@ -938,7 +1004,6 @@ $$.loaded(function() {
     /**[DONE]
      * Slider Box
      */
-    let slider_box = 'off';
     (function SliderBox() {
         if (slider_box === 'off') return;
         /*Sample Structure*/
@@ -1041,8 +1106,7 @@ $$.loaded(function() {
     /**[DONE]
      * Viewer
      */
-    let viewer = 'off';
-    let type = 'image'; /*image, pdf, html*/
+    let type = 'pdf'; /*image, pdf, html*/
     (function Viewer() {
         if (viewer === 'off') return;
         (function ViewerImage() {
@@ -1060,7 +1124,7 @@ $$.loaded(function() {
             if (type !== 'pdf') return;
             $$.viewer({
                 type: "pdf",
-                file: "../media/pdf/USG_CAROL_ISAAC.pdf"
+                file: "./media/pdf/SAMPLE.pdf"
             });
         })();
         (function ViewerHtml() {
@@ -1084,7 +1148,6 @@ $$.loaded(function() {
     /**[DONE]
      * Gallery
      */
-    let gallery = 'off';
     (function Gallery() {
         if (gallery === 'off') return;
         $$.gallery({
@@ -1104,7 +1167,6 @@ $$.loaded(function() {
     /**[DONE]
      * Paginate
      */
-    let paginate = 'off';
     (function Paginate() {
         if (paginate === 'off') return;
         function pageFaker(p) {console.log("pageFaker", p);
@@ -1143,7 +1205,6 @@ $$.loaded(function() {
     /**[DONE]
      * Jumper
      */
-    let jumper = 'off';
     (function Jumper() {
         if (jumper === 'off') return;
         $$.jumper({
@@ -1160,7 +1221,6 @@ $$.loaded(function() {
     /**[DONE]
      * SmartPager
      */
-    let smart_pager = 'off';
     (function SmartPager() {
         if (smart_pager === 'off') return;
         function pageFaker(p) {console.log("pageFaker", p);
@@ -1202,7 +1262,6 @@ $$.loaded(function() {
     /**[DONE]
      * Paged Table
      */
-    let paged_table = 'off';
     (function pagedTable() {
         if (paged_table === 'off') return;
         function _pagedTable(p) {
@@ -1290,7 +1349,6 @@ $$.loaded(function() {
     /**[DONE]
      * Icons
      */
-    let icons = 'off';
     (function Icons() {
         if (icons === 'off') return;
         jH("#icon-tests")
@@ -1372,7 +1430,6 @@ $$.loaded(function() {
     /**[DONE]
      * Queue
      */
-    let queue = 'off';
     (function Queue() {
         if (queue === 'off') return;
         function backEndAppProcessSync(item) {
@@ -1480,7 +1537,6 @@ $$.loaded(function() {
     /**[DONE]
      * Rater
      */
-    let rater = 'off';
     (function Rater() {
         if (rater === 'off') return;
         let _items_ = {
@@ -1806,7 +1862,6 @@ $$.loaded(function() {
     /**[DONE]
      * Sticker
      */
-    let sticker = 'off';
     (function Sticker() {
         if (sticker === 'off') return;
 
@@ -1828,7 +1883,6 @@ $$.loaded(function() {
     /**[DONE]
      * Rollup
      */
-    let rollup = 'off';
     (function Rollup() {
         if (rollup === 'off') return;
 
@@ -1842,7 +1896,6 @@ $$.loaded(function() {
     /**[DONE]
      * File
      */
-    let file = 'off';
     (function File() {
         if (file === 'off') return;
 
@@ -1901,7 +1954,6 @@ $$.loaded(function() {
     /**[DONE]
      * Draggable
      */
-    let draggable = 'off';
     (function Draggable() {
         if (draggable === 'off') return;
 
@@ -1938,7 +1990,6 @@ $$.loaded(function() {
     /**[DONE]
      * Progress
      */
-    let progress = 'off';
     (function Progress() {
         if (progress === 'off') return;
 
@@ -1969,7 +2020,6 @@ $$.loaded(function() {
     /**[WORK]
      * Grid
      */
-    let grid = 'on';
     (function Grid() {
         if (grid === 'off') return;
 
@@ -1998,8 +2048,8 @@ $$.loaded(function() {
 
                 /*If mode Default (processing by application)*/
                 renderize: {
-                    active: false,
-                    data: "" /*_data_object_, _data_object2_, _data_array_, _data_array2_*/
+                    active: true,
+                    data: _data_object2_ /*_data_object_, _data_object2_, _data_array_, _data_array2_*/
                 },
 
                 /*If mode Ajax (automatic query by smartPager)*/
@@ -2020,7 +2070,7 @@ $$.loaded(function() {
 
                 /*When paginate.backend_paginate is true, use this*/
                 query_paginate: {
-                    active: true,
+                    active: false,
 
                     /*Query String*/
                     // url: "./api/data/paginate.php?db=csv&product_name=Product",
@@ -2335,7 +2385,6 @@ $$.loaded(function() {
     /**[TODO]
      * selectCloner
      */
-    let select_cloner = 'off';
     (function SelectCloner() {
         if (select_cloner === 'off') return;
     })();

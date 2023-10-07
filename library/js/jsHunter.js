@@ -353,7 +353,9 @@
             let _str   = ($$.has('stringify').in(params)) ? params.stringify : false;
             let _cors  = ($$.has('cors').in(params)) ? params.cors : true;
             let _async = ($$.has('async').in(params)) ? params.async : true; /*default*/
-            let _rest  = ($$.has('restfull').in(params)) ? params.restfull : false;
+            let _rest  = ($$.has('restful').in(params)) ? params.restful : false;
+            let _auth  = ($$.has('authorization').in(params)) ? params.authorization : "";
+            let _cred  = ($$.has('credentials').in(params)) ? params.credentials : false;
 
             /**
              * Global Settings to pagedTable
@@ -435,36 +437,36 @@
                     }
                     /*GET: /api/user/:[123456]*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)?([0-9a-zA-Z]+)?$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_get_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*POST: Create*/
                 if (type === 'POST') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [POST] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [POST] !");
                     }
                     /*POST: /api/user {name: "Username", address: "Av. Enjoy 1234"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_post_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*PUT: Update*/
                 if (type === 'PUT') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [PUT] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [PUT] !");
                     }
                     /*PUT: /api/user/123456 {name: "New Username LastName", address: "New Address, 123567"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_put_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*DELETE*/
@@ -474,26 +476,26 @@
                     }
                     /*DELETE: /api/user/123456*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_delete_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
                 /*PATCH*/
                 if (type === 'PATCH') {
                     if (_data === "") {
-                        $$.exception("ajax(): Missing data parameters in restfull body request [PATCH] !");
+                        $$.exception("ajax(): Missing data parameters in restful body request [PATCH] !");
                     }
                     if (_data.split('&').length > 1) {
                         $$.exception("ajax(): This method can be use only one parameter, see documentation !");
                     }
                     /*PATCH: /api/user/123456 {name: "NewName Username"}*/
                     if (_url.search(/([a-zA-Z_-]+)(\/)([a-zA-Z_-]+)(\/)([0-9a-zA-Z]+)$/) === -1) {
-                        $$.exception("ajax(): Invalid restfull request url, see the documentation !");
+                        $$.exception("ajax(): Invalid restful request url, see the documentation !");
                     }
                     if (!$$.inArray(_patch_, _ctype)) {
-                        $$.exception("ajax(): Invalid Content Type to restfull request !");
+                        $$.exception("ajax(): Invalid Content Type to restful request !");
                     }
                 }
             }
@@ -524,12 +526,21 @@
                 /*Allow Cors*/
                 if (_cors) {
                     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                    xhr.withCredentials = true;
                 }
 
                 /*Content Type Send To Server*/
                 if (_ctype) {
                     xhr.setRequestHeader("Content-type", _ctype);
+                }
+
+                /*Authorization Send To Server*/
+                if (_auth !== "") {
+                    xhr.setRequestHeader("Authorization", _auth);
+                }
+
+                /*Send Credentials Data*/
+                if (_cred === true) {
+                    xhr.withCredentials = true;
                 }
 
                 /*Data Type From Server*/
@@ -703,6 +714,79 @@
         },
 
         /**
+         * @description Restful, to make an requests following restful rules
+         * @param {string} _url (string: Mandatory)
+         * @param {boolean} _async (boolean: Optional)
+         * @param {undefined} _auth (undefined: Optional)
+         * @returns {object} (object: All functions for this method)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         * @how-use
+         *     $$.restful("https://app.com/api/product", true, TOKEN).get();
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).get();
+         *     $$.restful("https://app.com/api/product", true, TOKEN).post({data/json});
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).put({data/json/full});
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).delete();
+         *     $$.restful("https://app.com/api/product/1", true, TOKEN).patch({data/json/partial});
+         */
+        restful: function(_url, _async = false, _auth = undefined) {
+            let args = {
+                url: _url,
+                async: _async,
+                cors: true,
+                restful: true,
+                dataType: "json",
+                contentType: "application/json",
+                stringify: true,
+                authorization: _auth,
+                credentials: false,
+            };
+
+            function _ok(response) {
+                if (!$$.isDefined(response) || $$.empty(response)) return null;
+                try {
+                    return JSON.parse(response);
+                } catch (er) {
+                    return response;
+                }
+            }
+
+            function _error(e) {
+                $$.log("restful() error => " + e).error();
+            }
+
+            function _get() {
+                $$.ajax(args).get(_ok, _error);
+            }
+
+            function _delete() {
+                $$.ajax(args).delete(_ok, _error);
+            }
+
+            function _post(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).post(_ok, _error);
+            }
+
+            function _put(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).put(_ok, _error);
+            }
+
+            function _patch(data = undefined) {
+                args["data"] = data;
+                $$.ajax(args).patch(_ok, _error);
+            }
+
+            return {
+                "get": _get,
+                "post": _post,
+                "put": _put,
+                "delete": _delete,
+                "patch": _patch
+            };
+        },
+
+        /**
          * @description Receiver an response from any process in the jshunter library
          * @returns {string} (string: Any data from response)
          * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
@@ -833,6 +917,56 @@
             }
 
             return {"run": _run, "all": _all, "ignore": _ignore, "race": _race};
+        },
+
+        /**
+         * @description Redirect an request to any url destiny
+         * @param {string} url (string: Mandatory)
+         * @returns {null} (null: Alone)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         */
+        redirect: function(url) {
+            window.location.href = url;
+        },
+
+        /**
+         * @description Open, open a new tab window parametrized
+         * @param {object} params (object: Mandatory)
+         * @returns {object} (object: All functions for this method)
+         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
+         */
+        open: function(params= {}) {
+            let toolbar = (params.toolbar === true) ? "yes" : "no";
+            let scrollbars = (params.scrollbars) ? "yes" : "no";
+            let resize = (params.resize) ? "yes" : "no";
+            let top_pos = params.top || 0;
+            let left_pos = params.left || 0;
+            let size = params.size || "500x500";
+            let width = size.split("x")[0];
+            let height = size.split("x")[1];
+            let features =
+                "toolbar="+toolbar+"," +
+                "scrollbars="+scrollbars+"," +
+                "resizable="+resize+"," +
+                "top="+top_pos+"," +
+                "left="+left_pos+"," +
+                "width="+width+"," +
+                "height="+height+"";
+
+            function _url(url) {
+                window.open(
+                    url,
+                    params.target,
+                    features);
+            }
+            function _write(data) {
+                let myWin = window.open(
+                    "",
+                    params.target,
+                    features);
+                myWin.document.write(data);
+            }
+            return {"url": _url, "write": _write};
         },
 
         /*
@@ -1284,16 +1418,68 @@
             let targets = [
                 "checkbox", "color", "date", "datetime-local", "email", "file", "hidden", "image", "month",
                 "number", "password", "radio", "range", "search", "tel", "text", "time", "url", "week",
+                "label", "fieldset", "button"
             ];
             let get_fields = null;
             let tmp = [];
             let files = [];
-            let json_serial = {};
-            let files_serial = {};
             let serialized = "";
+            let pusher = {};
+            let pusher_files = {};
+            let json_assert = {};
+            let files_assert = {};
 
             function dataPrepare(file = false) {
-                (function huntTargets() {
+
+                function populateArray(_key) {
+                    for (let i = 0; i < tmp.length; i++) {
+                        for (let j = 0; j < tmp[i].length; j++) {
+                            let _key_ = (tmp[i][j].name || tmp[i][j].id).replace(/[\["\]]/gi, "");
+                            if (_key_ === _key) {
+                                if (tmp[i][j].type === 'radio' || tmp[i][j].type === 'checkbox') {
+                                    if (tmp[i][j].checked === true) {
+                                        pusher[_key].push(tmp[i][j].value);
+                                    }
+                                } else if (tmp[i][j].value !== "") {
+                                    pusher[_key].push(tmp[i][j].value);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                function assertArray() {
+                    Object.keys(pusher).forEach(function(item, index, array) {
+                        if (pusher[item].length === 1) {
+                            json_assert[item] = pusher[item][0];
+                        } else if (pusher[item].length > 1) {
+                            json_assert[item] = pusher[item];
+                        }
+                    });
+                }
+
+                function populateArrayFiles(_key) {
+                    for (let i = 0; i < files.length; i++) {
+                        for (let j = 0; j < files[i].length; j++) {
+                            let _key_ = (files[i][j].name || files[i][j].id).replace(/[\["\]]/gi, "");
+                            if (_key_ === _key && files[i][j].files[0] !== "") {
+                                pusher_files[_key].push(files[i][j].files[0]);
+                            }
+                        }
+                    }
+                }
+
+                function assertArrayFiles() {
+                    Object.keys(pusher_files).forEach(function(item, index, array) {
+                        if (pusher_files[item].length === 1) {
+                            files_assert[item] = pusher_files[item][0];
+                        } else if (pusher_files[item].length > 1) {
+                            files_assert[item] = pusher_files[item];
+                        }
+                    });
+                }
+
+                (function captureTargets() {
                     try {
                         /*Input*/
                         targets.forEach(function (item, index, array) {
@@ -1320,46 +1506,59 @@
                         if (get_fields.length > 0) {
                             tmp.push(get_fields);
                         }
+                        /*Buttons*/
+                        get_fields = document.querySelectorAll(form + " button");
+                        if (get_fields.length > 0) {
+                            tmp.push(get_fields);
+                        }
                     } catch (er) {
                         $$.noth();
                     }
                 })();
 
-                (function workInFoundInputs() {
+                (function mapperTargets() {
                     if (tmp.length === 0) return;
 
-                    tmp.forEach(function (item, index, array) {
-                        for (let i = 0; i < item.length; i++) {
-                            json_serial[item[i].name || item[i].id] = item[i].value;
+                    tmp.forEach(function(it, id, ar) {
+                        for (let i = 0; i < it.length; i++) {
+                            let kn = (it[i].name || it[i].id).replace(/[\["\]]/gi, "");
+                            pusher[kn] = [];
+                            populateArray(kn);
                         }
                     });
+
+                    assertArray();
                 })();
 
-                (function workInFoundFiles() {
+                (function mapperTargetsFiles() {
                     if (files.length === 0) return;
 
-                    files.forEach(function (item, index, array) {
-                        for (let i = 0; i < item.length; i++) {
-                            files_serial[item[i].name || item[i].id] = item[i].files[0];
+                    files.forEach(function(it, id, ar) {
+                        for (let i = 0; i < it.length; i++) {
+                            let kn = (it[i].name || it[i].id).replace(/[\["\]]/gi, "");
+                            pusher_files[kn] = [];
+                            populateArrayFiles(kn);
                         }
                     });
+
+                    assertArrayFiles();
                 })();
             }
 
             function _json() {
                 dataPrepare();
-                return json_serial;
+                return json_assert;
             }
 
             function _stringify() {
                 dataPrepare();
-                return JSON.stringify(json_serial);
+                return JSON.stringify(json_assert);
             }
 
             function _serialize(enc = false) {
                 dataPrepare();
-                Object.keys(json_serial).forEach(function(item, index, array) {
-                    serialized += "&" + item.toString() + "=" + json_serial[item];
+                Object.keys(json_assert).forEach(function(item, index, array) {
+                    serialized += "&" + item.toString() + "=" + json_assert[item];
                 });
 
                 if (enc === true) {
@@ -1385,12 +1584,16 @@
                     let fd = new FormData();
                     fd.append("action_name", "send_files")
 
-                    Object.keys(json_serial).forEach(function (item, index, array) {
-                        fd.append(item.toString(), json_serial[item]);
+                    Object.keys(json_assert).forEach(function (item, index, array) {
+                        fd.append(item.toString(), json_assert[item]);
                     });
 
-                    Object.keys(files_serial).forEach(function (item, index, array) {
-                        fd.append(item.toString(), files_serial[item]);
+                    Object.keys(files_assert).forEach(function (item, index, array) {
+                        for (let i = 0; i < files_assert[item].length; i++) {
+                            if (files_assert[item][i]) {
+                                fd.append(item.toString()+"-"+i, files_assert[item][i]);
+                            }
+                        }
                     });
 
                     return fd;
