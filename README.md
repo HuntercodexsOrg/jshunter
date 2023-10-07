@@ -6,9 +6,5 @@ Javascript Library: A simple library javascript for help on anywhere purposes
 
 # Documentation
 
-Please, give a look in the website jsHunter for more details:
-
-http://www.jshunter-lib.com/
-
 <hr />
  
