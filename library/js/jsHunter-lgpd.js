@@ -30,7 +30,6 @@
      * @description LGPD
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.lgpd = function(params) {
         return this;

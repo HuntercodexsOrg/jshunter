@@ -317,7 +317,6 @@
          * @description Set a callback when jsHunter and all application resources has been loaded
          * @param {function} callback (function: Mandatory)
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         loaded: function(callback) {
             window.onload = function() {
@@ -339,7 +338,6 @@
          * @description Make a Ajax request (include sync option)
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         ajax: function(params = {}) {
 
@@ -688,7 +686,6 @@
          * @description Do an fast request by HTTP GET Method
          * @param {object} _url (object: Mandatory)
          * @returns {object} (object: Response in format JSON)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         requester: function(_url) {
             let response = null;
@@ -719,7 +716,6 @@
          * @param {boolean} _async (boolean: Optional)
          * @param {undefined} _auth (undefined: Optional)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use
          *     $$.restful("https://app.com/api/product", true, TOKEN).get();
          *     $$.restful("https://app.com/api/product/1", true, TOKEN).get();
@@ -789,7 +785,6 @@
         /**
          * @description Receiver an response from any process in the jshunter library
          * @returns {string} (string: Any data from response)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         receiver: function() {
             recCtrl = setInterval(function() {
@@ -804,7 +799,6 @@
          * @description Promise (resolve, reject)
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         promise: function(params = {}) {
             let timeout = ($$.is(params.timeout).num()) ? (params.timeout * 1000) : 0;
@@ -923,7 +917,6 @@
          * @description Redirect an request to any url destiny
          * @param {string} url (string: Mandatory)
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         redirect: function(url) {
             window.location.href = url;
@@ -933,7 +926,6 @@
          * @description Open, open a new tab window parametrized
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         open: function(params= {}) {
             let toolbar = (params.toolbar === true) ? "yes" : "no";
@@ -979,7 +971,6 @@
          * @description Check if key name exists in any data object
          * @param {string} param_name (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         has: function(param_name) {
             function _in(name) {
@@ -1002,7 +993,6 @@
          * @param {string} type (string: Mandatory)
          * @param {undefined} value (undefined: Mandatory)
          * @returns {this} (this.property: The props required)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         props: function(type, value) {
             return this.attr(type, value);
@@ -1013,7 +1003,6 @@
          * @param {string} type (string: Mandatory)
          * @param {string|object} value (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         attr: function(type, value) {
             try {
@@ -1035,7 +1024,6 @@
          * @description Set or adjust (dynamic) an element size (after calculate) in the screen
          * @param {object} params (object: Mandatory)
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         screenSizer: function(params = {}) {
             sizeCtrl = setInterval(function() {
@@ -1083,7 +1071,6 @@
         /**
          * @description Stop a screenSizer() function execution if needed
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         screenSizerStop: function() {
             clearInterval(sizeCtrl);
@@ -1100,7 +1087,6 @@
          * @description Password, show and hide password text on any HTMLElement<input>
          * @param {string} target (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         password: function(target) {
             function _mouseover() {
@@ -1136,7 +1122,6 @@
          * @param {string} param (string: Mandatory)
          * @param {function} callback (function: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         click: function(param = "", callback) {
             let _sel = this.sel;
@@ -1178,7 +1163,6 @@
          * @param {object} params (object: Mandatory)
          * @param {number} index (number: Optional)
          * @returns {boolean} (boolean: True or False based on required type)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         isOn: function(params = {}, index) {
             let _sel    = this.sel;
@@ -1217,7 +1201,6 @@
          * @param {string} ev (string[:event]: Mandatory)
          * @param {function} listener (function: Recommended)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         unbind: function(ev, listener) {
             let _sel = this.sel;
@@ -1250,7 +1233,6 @@
          * @param {string} ev (string[:event]: Mandatory)
          * @param {function} callback (function: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         on: function(ev, callback) {
             let _sel = this.sel;
@@ -1305,7 +1287,6 @@
          * @param {string} ev (string[:event]: Mandatory)
          * @param {function} callback (function: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         check: function(ev, callback) {
             let _sel = this.sel;
@@ -1346,7 +1327,6 @@
         /**
          * @description Check if element is checked (radio, checkbox...)
          * @returns {boolean} (boolean: True or False to checkbox = checked)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         isChecked: function() {
             let state = false;
@@ -1372,7 +1352,6 @@
         /**
          * @description Submit an <HTMLElement:form>
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         submit: function() {
             try {
@@ -1391,7 +1370,6 @@
         /**
          * @description Reset one or more <HTMLElement:form> elements
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         reset: function() {
             let _sel = this.sel;
@@ -1412,7 +1390,6 @@
          * @description Form, get all data from any <HTMLElement:form> element
          * @param {string} form (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         form: function(form) {
             let targets = [
@@ -1612,7 +1589,6 @@
         /**
          * @description Erase a content on target <HTMLElement>
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         erase: function() {
             try {
@@ -1628,7 +1604,6 @@
          * @description Write/Reset a content to any <HTMLElement>
          * @param {string} data (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         html: function(data) {
             try {
@@ -1648,7 +1623,6 @@
          * @description Write/Add a content to any <HTMLElement>
          * @param {string} data (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         append: function(data) {
             try {
@@ -1669,7 +1643,6 @@
          * @param {string} classname (string: Mandatory)
          * @param {number} index (number: Optional)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         addClass: function(classname, index = undefined) {
             let _sel    = this.sel;
@@ -1731,7 +1704,6 @@
          * @param {string} classname (string: Mandatory)
          * @param {number} index (number: Optional)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         removeClass: function(classname, index = undefined) {
             let _sel    = this.sel;
@@ -1764,7 +1736,6 @@
          * @param {string} classname (string: Mandatory)
          * @param {number} index (number: Optional)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         setClass: function(classname, index = undefined) {
             let _sel    = this.sel;
@@ -1799,7 +1770,6 @@
          * @description Reset css styles in one or more HTMLElements
          * @param {number} index (number: Optional)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         resetStyle: function(index = undefined) {
             let _sel    = this.sel;
@@ -1835,7 +1805,6 @@
          * @param {object} params (object: Mandatory)
          * @param {string|object} text (string|object: Optional)
          * @returns {object} (object: Mixed Data Object Type)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         create: function(params = {}, text = "") {
             let el = _createHtmlElement(params);
@@ -1863,7 +1832,6 @@
          * @description Insert a new element in any HTMLElement target
          * @param {HTMLElement} element (<HTMLElement>: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         insert: function(element) {
             let parent = null;
@@ -1887,7 +1855,6 @@
          * @description Set one or more attributes on any <HTMLElement>
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         set: function(params = {}) {
             let keys = Object.keys(params);
@@ -1934,7 +1901,6 @@
          * @param {string} parent (string: Mandatory)
          * @param {string} children (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         remove: function(parent, children) {
             let _el_ = document.querySelectorAll(parent);
@@ -1951,7 +1917,6 @@
          * @description Remove one element children from parent
          * @param {string} child (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         removeChild: function(child) {
             function _from(parent) {
@@ -1970,7 +1935,6 @@
         /**
          * @description Restart one or more elements, remove all children
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         restart: function() {
             let _sel = this.sel;
@@ -1990,7 +1954,6 @@
          * @description Set or Get a cookie on current document
          * @param {string} name (string: Mandatory)
          * @returns object
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         cookie: function(name) {
             function set(value) {
@@ -2009,7 +1972,6 @@
          * @description Storage, Set or Get a value on local storage in the current document
          * @param {string} name (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         storage: function(name) {
             function set(value) {
@@ -2029,7 +1991,6 @@
          * @description Copy, get a text into current document
          * @param {string} target_copy {string: Mandatory}
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         copy: async function(target_copy) {
             let tc = jH(target_copy).select();
@@ -2045,7 +2006,6 @@
          * @description Cut any <HTMLElement> from DOM defined by parent element
          * @param {object} params (object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)|string
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         cut: function(params = {}) {
             let keys = Object.keys(params);
@@ -2089,7 +2049,6 @@
          * @description Paste, recovery text copied previous
          * @param {string} target_paste (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         paste: async function(target_paste) {
             try {
@@ -2106,7 +2065,6 @@
          * @param {object} obj (object: Mandatory)
          * @param {object} params (object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         objWriter: function(obj, params) {/*For developers, use together with jsHunter.css*/
             try {
@@ -2235,7 +2193,6 @@
          * @description is (Structure), Get data structure type from parameter
          * @param {object} data (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         is: function(data) {
             function _object() {
@@ -2305,7 +2262,6 @@
         /**
          * @description Format any date as needed
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         date: function() {
             let date_now = new Date();
@@ -2404,7 +2360,6 @@
         /**
          * @description Get data information about the Browser
          * @returns {object} (object: An JSON object refers to user browser)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         navigator: function() {
             return {
@@ -2423,7 +2378,6 @@
          * @description Get a text inside any HTMLElement on DOM by index argument
          * @param {number|undefined} i (number|undefined: Mandatory)
          * @returns {string} (string: An text refer to any <HTMLElement>)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         text: function(i = undefined) {
             return (i >= 0) ? this.sel[i].textContent || this.sel[i].text :
@@ -2437,7 +2391,6 @@
          * @param {string} data_type (string: Mandatory)
          * @param {string|object|null|undefined} event (string|object|event: Mandatory)
          * @returns {string} (string: An content [text] refer to any <HTMLElement>)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         getData: function(data_type, event ) {
             switch(data_type) {
@@ -2475,7 +2428,6 @@
         /**
          * @description Get current screen size
          * @returns {object} (object: An JSON object refers to screen size)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         screen: function() {
             return {width: window.innerWidth, height: window.innerHeight};
@@ -2485,7 +2437,6 @@
          * @description Get a computed css data from any HTMLElement
          * @param {HTMLElement} element (<HTMLElement>: Mandatory)
          * @returns {object} (object: An JSON object refers to computed css styles to any <HTMLElement>)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         computedCss: function(element) {
             try {
@@ -2499,7 +2450,6 @@
          * @description Set or Get a value from HTMLElement
          * @param {undefined} value (undefined: Mandatory|Optional)
          * @returns {null|string} (null|string: An value from any <HTMLElement>, or erase content)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         val: function(value = undefined) {
             try {
@@ -2531,7 +2481,6 @@
          * @description Toggle a value or the visible to element in current document
          * @param {object} param (object: Optional)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         toggle: function(param = "") {
             try {
@@ -2588,7 +2537,6 @@
         /**
          * @description Toggle FullScreen Window
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         fullscreen: function() {
             function _run() {
@@ -2655,7 +2603,6 @@
          * @description Set css transition (animation) in any HTMLElement
          * @param {string} transition (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         anime: function(transition) {
             try {
@@ -2677,7 +2624,6 @@
          * @description Set the css display property on any HTMLElement
          * @param {string} value (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         display: function(value) {
             try {
@@ -2696,7 +2642,6 @@
         /**
          * @description Set any HTMLElement with a show visible
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         show: function() {
             try {
@@ -2715,7 +2660,6 @@
         /**
          * @description Set any HTMLElement with a hide visible
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         hide: function() {
             try {
@@ -2735,7 +2679,6 @@
          * @description Make a fade in effect on any HTMLElement
          * @param {object} p (object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         fadeIn: function(p = {}) {
             clearInterval(fadeCtrl); /*Bug Fix*/
@@ -2793,7 +2736,6 @@
          * @description Make a fade out effect on any HTMLElement
          * @param {object} p (object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         fadeOut: function(p = {}) {
             clearInterval(fadeCtrl); /*Bug Fix*/
@@ -2834,7 +2776,6 @@
          * @description Set or Get a current height from HTMLElements
          * @param  {number|string|object} value (number|string|object: Mandatory|Optional)
          * @returns {this} (this: Current instanceOf jsHunter)|string
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         height: function(value = undefined) {
             try {
@@ -2858,7 +2799,6 @@
          * @description Set or Get a current width from HTMLElements
          * @param {number|string|object} value (number|string|object: Mandatory|Optional)
          * @returns {this} (this: Current instanceOf jsHunter)|string
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         width: function(value = undefined) {
             try {
@@ -2882,7 +2822,6 @@
          * @description Set top CSS property on any <HTMLElement>
          * @param  {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         top: function(value = undefined) {
             try {
@@ -2915,7 +2854,6 @@
          * @description Set right CSS property on any <HTMLElement>
          * @param {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         right: function(value = undefined) {
             try {
@@ -2948,7 +2886,6 @@
          * @description Set bottom CSS property on any <HTMLElement>
          * @param {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         bottom: function(value = undefined) {
             try {
@@ -2981,7 +2918,6 @@
          * @description Set left CSS property on any <HTMLElement>
          * @param {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         left: function(value = undefined) {
             try {
@@ -3014,7 +2950,6 @@
          * @description Hide HTMLElements
          * @param {string} element (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         hidden: function(element) {
             let _el_ = document.querySelectorAll(element);
@@ -3031,7 +2966,6 @@
          * @param {string} orientation (string: Mandatory)
          * @param {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         margin: function(orientation, value) {
             try {
@@ -3094,7 +3028,6 @@
          * @param {string|number|undefined|null|object} value (string|number|undefined|null|object: Mandatory)
          * @param {string} type (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         sizer: function(element, orientation, value, type) {
             try {
@@ -3110,7 +3043,6 @@
          * @param {HTMLElement} element (<HTMLElement>: Mandatory)
          * @param {string|number|undefined|null|object} opacity (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         opacity: function(element, opacity) {
             try {
@@ -3127,7 +3059,6 @@
          * @param {string|number|undefined|null|object} element_width (string|number|undefined|null|object: Mandatory)
          * @param {string|number|undefined|null|object} element_height (string|number|undefined|null|object: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         centralize: function(element, element_width, element_height) {
             try {
@@ -3141,7 +3072,6 @@
         /**
          * @description Make a automatic scroll of the page (single page) until target
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         scroller: function() {
             try {
@@ -3165,7 +3095,6 @@
          * @description Move an element to direction left, right, up or down
          * @param {string} element (string: Mandatory)
          * @returns object
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         move: function(element) {
             function _to(direction, value) {
@@ -3200,7 +3129,6 @@
          * @param {number|string|object} prop Css (number|string|object: Mandatory)
          * @param {number|string} val Property Css (number|string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         css: function(prop, val = undefined) {
             let _sel = this.sel;
@@ -3260,7 +3188,6 @@
          * @description Get an specific css property from any HTMLElement
          * @param {string} prop (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)|array
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use jH("#target").cssCurrent("left");
          */
         cssCurrent: function(prop) {
@@ -3301,7 +3228,6 @@
          * @description dataType, Set and Get data type from any data value
          * @param {object} d (object: Mandatory)
          * @returns string
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         dataType: function(d) {
             if ($$.is(d).array() && $$.is(d).object() && ($$.is(d[0]).array() || $$.is(d[1]).array())) {
@@ -3323,7 +3249,6 @@
          * @description Array Map, map an array to other data structure
          * @param {array} arr (array: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         arrayMap: function(arr) {
             let _keys = [];
@@ -3373,7 +3298,6 @@
          * @description ObjectMap, mapper the object and convert to other data structure
          * @param {object} obj (object: Mandatory)
          * @returns object
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         objectMap: function(obj) {
             function _tryObjToArray() {
@@ -3412,7 +3336,6 @@
          * @description CSV Map
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         csvMap: function(params) {
             let columns = [];
@@ -3564,7 +3487,6 @@
         /**
          * @description jsonMap
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         jsonMap: function() {
             return this;
@@ -3573,7 +3495,6 @@
         /**
          * @description listMap
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         listMap: function() {
             return this;
@@ -3582,7 +3503,6 @@
         /**
          * @description envMap
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         envMap: function() {
             return this;
@@ -3601,7 +3521,6 @@
          * @param {object} arg2 (object: Optional)
          * @param {object} arg3 (object: Optional)
          * @returns {null} (null: Alone)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.exec(cmd, arg1, arg2, arg3);
          */
         exec: function(command, arg1 = undefined, arg2 = undefined, arg3 = undefined) {
@@ -3625,7 +3544,6 @@
          * @description Await, set a time to execute any function
          * @param {number} seconds (number: Optional)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.await(time[seconds]).run(fn);
          */
         await: function(seconds = 1) {
@@ -3648,7 +3566,6 @@
          * @param {object} obj (object: Mandatory)
          * @param {boolean} enc (boolean: Optional)
          * @returns {string} (string: The string serialized)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         serialize: function(obj, enc = true) {
             let serialized = "";
@@ -3666,7 +3583,6 @@
          * @description Length, get a length from any data source
          * @param {number,string,array,object} data (number,string,array,object: Mandatory)
          * @returns {number} (number: The length to current data source)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         length: function(data) {
             if ($$.is(data).string() || $$.is(data).num()) {
@@ -3690,7 +3606,6 @@
          * @description Optimize, sort, organize and optimize an array data
          * @param {array|object} arr (array|object: Mandatory)
          * @returns {object} (object: An object refers array sorted and info operations)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         optimize: function(arr) {
             function _reverse() {
@@ -3772,7 +3687,6 @@
          * @description Bubble, sort array in sequencial mode
          * @param {array|object} arr (array|object: Mandatory)
          * @returns {object} (object: An object refers array sorted and number of changes)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         bubble: function(arr) {
             let aux = undefined;
@@ -3818,7 +3732,6 @@
          * @description Matcher, compare data with any target list and get a list of matches as result
          * @param {object} params (object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         matcher: function(params = {}) {
 
@@ -4037,7 +3950,6 @@
          * @description MD5, get codification hash refers to any string data
          * @param {string} data (string: Mandatory)
          * @returns {string} MD5 Sum Hash Code
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         md5: function(data) {
             /**
@@ -4245,7 +4157,6 @@
          * @description Basename, get a basename of an filepath
          * @param {string} filepath (string: Mandatory)
          * @returns {string} File and Extension name
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         basename: function(filepath) {
             let f = filepath.split('.');
@@ -4265,7 +4176,6 @@
          * @description Is HTTPS, check if current url is secure
          * @param {string} url (string[:URL]: Mandatory)
          * @returns boolean (boolean: True or False if URL is HTTPS)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         isHttps: function(url) {
             return (url.toString().search(/^https\/\//) !== -1);
@@ -4275,7 +4185,6 @@
          * @description QueryString, create a query string data send to server
          * @param {object} param (object: Mandatory)
          * @returns string (string: The current string formatted to QueryString Data)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         queryString: function(param) {
             let _d = "";
@@ -4289,7 +4198,6 @@
          * @description Lock a screen navigation with a button from browser
          * @param {string} params (string: Mandatory)
          * @returns array
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         padlock: function(params = "") {
 
@@ -4358,7 +4266,6 @@
          * @description ToArray, convert any data structure to array structure
          * @param {object|string} param (object|string: Mandatory)
          * @returns array (array: An Array contained the current data parameter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         toArray: function(param) {
             let array = [];
@@ -4376,7 +4283,6 @@
          * @param {number|string} _value (number|string: Mandatory)
          * @param {boolean} _async (boolean: Optional)
          * @returns boolean (boolean: True or False if value is in parametrized array)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         inArray: function(_array, _value, _async = true) {
             let result = false
@@ -4420,7 +4326,6 @@
          * @description Check if element or object is array
          * @param {array|object} _array (array|object: Mandatory)
          * @returns boolean (boolean: True or False if parameter is an valid array)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         isArray: function(_array) {
             try {
@@ -4444,7 +4349,6 @@
          * @param {string} from (string: Mandatory)
          * @param {string} to (string: Mandatory)
          * @returns {array} (array: An array replaced with required options)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         replaceArray: function(array = [], from, to) {
             let _arr_ = [];
@@ -4459,7 +4363,6 @@
          * @param {object|array} arr (object|array: Mandatory)
          * @param {object} options (object: Optional)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         sort: function(arr, options = {}) {
             let _array = [];
@@ -4692,7 +4595,6 @@
          * @description Get a total number of elements defined by args in current document
          * @param {HTMLElement|object|array} param (HTMLElement|object|array: Optional)
          * @returns {number} (number: The number of counter refer a data parameter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         count: function(param = "") {
             try {
@@ -4719,7 +4621,6 @@
          * @description Check if target value is defined with an valid value
          * @param {string|null} val (string|null: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is null or undefined)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         isDefined: function(val) {
             return (val !== null && val !== undefined);
@@ -4729,7 +4630,6 @@
          * @description Check if target value is empty
          * @param {string|null} value (string|null: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is empty)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         empty: function(value) {
             return (value === null || value === undefined || value === "" || !value);
@@ -4739,7 +4639,6 @@
          * @description Select, select one or more element in current DOM
          * @param {string} _inter_sel_ (string: Optional)
          * @returns {object} (object: Reference of current instance library)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         select: function(_inter_sel_= "") {
             try {
@@ -4771,7 +4670,6 @@
          * @description Hunt, get one or more element in current DOM
          * @param {string} _inter_sel_ (string: Optional)
          * @returns {object} (object: Reference of current instance library)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.hunt("#jh-progress-container");
          */
         hunt: function(_inter_sel_= "") {
@@ -4783,7 +4681,6 @@
          * @param {string} wanted (string: Mandatory)
          * @param {string} nodeType (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         hunter: function(wanted, nodeType) {
             try {
@@ -4826,7 +4723,6 @@
          * @description Get a node parent from any HTMLElement
          * @param {string} parentItem (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         nodeParent: function(parentItem) {
             try {
@@ -4843,7 +4739,6 @@
          * @description Get a node child from any HTMLElement
          * @param {string} childItem (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         nodeChild: function(childItem) {
             try {
@@ -4861,7 +4756,6 @@
          * @param {HTMLElement} element (<HTMLElement>: Mandatory)
          * @param {string} id_value (string) (string: Mandatory)
          * @returns {boolean} (boolean: True or False if <HTMLElement> contain the id parameter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         matchId: function(element, id_value) {
             return (
@@ -4876,7 +4770,6 @@
          * @param {HTMLElement} element (<HTMLElement>: Mandatory)
          * @param {string} classname (string: Mandatory)
          * @returns {boolean} (boolean: True or False if <HTMLElement> contain the className parameter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         matchClass: function(element, classname) {
             return (
@@ -4890,7 +4783,6 @@
          * @description Find one element by id in current DOM and return a boolean value
          * @param {string} id (string: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is id and exists in current DOM)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         findId: function(id) {
             if(id.search(/^\.|\[/) === -1) {
@@ -4905,7 +4797,6 @@
          * @description Find one element by className in current DOM and return a boolean value
          * @param {string} classname (string: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is className and exists in current DOM)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         findClass: function(classname) {
             if(classname.search(/^#|\[/) === -1) {
@@ -4920,7 +4811,6 @@
          * @description Find one element by data-set in current DOM and return a boolean value
          * @param {string} element (string: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is a data-content and exists in current DOM)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         findElements: function(element) {
             if(element.search(/^\[(.*)+]$/) !== -1) {
@@ -4935,7 +4825,6 @@
          * @description Find one or more elements (free) in current DOM and return a boolean value
          * @param {string} element (string: Mandatory)
          * @returns {boolean} (boolean: True or False if data parameter is a data-content and exists in current DOM)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         findTarget: function(element) {
             return !!document.querySelectorAll(element).length;
@@ -4945,7 +4834,6 @@
          * @description Broken any string by any separator and union with other parameter
          * @param {string} param (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.explode("Teste amarelo vermelho").by(" ").union("[", "]");
          */
         explode: function(param) {
@@ -4969,7 +4857,6 @@
          * @description Highlight words in any string
          * @param {string} wanted (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.highlight("amarelo").in("Carro amarelo grande").color("yellow");
          */
         highlight: function(wanted) {
@@ -4987,7 +4874,6 @@
          * @param {number} min (number: Mandatory)
          * @param {number} max (integer) (number: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.rand(0, 100).inclusive();
          */
         rand: function(min, max) {
@@ -5011,7 +4897,6 @@
          * @param {string|function} char (string|function: Mandatory)
          * @param {number|string} until (number|string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.repeat("A", 3).asString();
          */
         repeat: function(char, until) {
@@ -5083,7 +4968,6 @@
          * @param {string|number|object|null} input (string|number|object|null: Mandatory)
          * @param {number} substr (number: Optional)
          * @returns {number|string} (number|string: The result as a Integer Number)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.intNumber("123A90");
          */
         intNumber: function(input, substr = 0) {
@@ -5105,7 +4989,6 @@
          * @param {string|number|object|null} input (string|number|object|null: Mandatory)
          * @param {number} fix (number: Optional)
          * @returns {number} (float: The result as a Float Number)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.floatNumber("10,00");
          */
         floatNumber: function(input, fix = 0) {
@@ -5124,7 +5007,6 @@
          * @description Format, Generic Data Format
          * @param {string} input (string: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         format: function(input) {
             function _money() {
@@ -5155,7 +5037,6 @@
          * @description Get a higher number from array or collection values
          * @param {number|string|object} param (number|string|object: Mandatory)
          * @returns {number} (number: The higher number from any source values)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         higherNumber: function(param) {
             let higher = 0;
@@ -5171,7 +5052,6 @@
          * @description Make clear on value, removing white spaces in the initial and final of the value
          * @param {string} data (string: Mandatory)
          * @returns {string} (string: The string input without spaces on final and initial position)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          * @how-use $$.trim(" test data 123 ");
          */
         trim: function(data) {
@@ -5185,7 +5065,6 @@
          * @description To number format with an specific separator
          * @param {number|string|object} data (number|string|object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         number: function(data) {
             function _cut(cut) {
@@ -5215,7 +5094,6 @@
          * @param {string} from (string) (string: Mandatory)
          * @param {string} to (string) (string: Mandatory)
          * @returns {string} (string: An string replaced)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         replaceAll: function(data, from, to) {
             try {
@@ -5235,7 +5113,6 @@
          * @param {string} data (string) (string: Mandatory)
          * @param {boolean} iterative (boolean: Optional)
          * @returns {string} (string: The string formatted as upper case first)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         ucFirst: function(data, iterative = true) {
             let ar = data.split(" ");
@@ -5259,7 +5136,6 @@
          * @description Remove all tags from any source and get only text content
          * @param {HTMLElement|string|object} html (<HTMLElement>|string|object: Mandatory)
          * @returns {string} (string: The result in text only, without html tags)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         htmlClear: function(html) {
             let clear = "";
@@ -5299,7 +5175,6 @@
          * @description Convert data <HTMLElement> to Array
          * @param {HTMLElement|object} element (<HTMLElement>|object: Mandatory)
          * @returns {array} (array: An array of  HTMLElements
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         htmlToArray: function(element) {
             let _a_ = [];
@@ -5319,7 +5194,6 @@
          * @description Convert a HEXADECIMAL value to RGB
          * @param {string} color_hex (string: Mandatory)
          * @returns {null|object} (object: When everything fine, get a rgb and rgba color from any hex source color)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         hexToRgb: function(color_hex) {
             let i = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color_hex);
@@ -5343,7 +5217,6 @@
          * @param {string} src (string: Mandatory)
          * @param {number} idx (number: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         clone: function(src, idx = 0) {
             let _e_ = jH(src).select();
@@ -5362,7 +5235,6 @@
          * @param {string} data (string: Mandatory)
          * @param {string} lang (string: Mandatory)
          * @returns {string} (string: Currency Formatted Data)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         currency: function(data, lang) {
             let currency_symbol = {
@@ -5392,7 +5264,6 @@
          * @description Test library installation in your application
          * @param {string} param (string: Mandatory)
          * @returns {this} (this: Current instanceOf jsHunter)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         _test_: function(param) {
             console.log("Test is running...", param);
@@ -5415,7 +5286,6 @@
          * @description Thrown an exception
          * @param {number|string|object} msg (number|string|object: Mandatory)
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         exception: function(msg){
             throw msg;
@@ -5425,7 +5295,6 @@
          * @description Log a message error or exception
          * @param {number|string|object} data (number|string|object: Mandatory)
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         log: function(data = undefined){
             function _print(color = "") {
@@ -5486,7 +5355,6 @@
         /**
          * @description Just simulate /dev/null
          * @returns {null} (null: Alone)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         noth: function() {
             (function(){void(0);})();
@@ -5496,7 +5364,6 @@
          * @description JH Debug, set and get debug state to library runtime
          * @param {boolean} state (boolean: Mandatory)
          * @returns {boolean} (boolean: The state of debug library in runtime)
-         * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
          */
         jHDebug: function(state = undefined) {
             if (state === true || state === false) {
@@ -5509,7 +5376,6 @@
         /**
          * @description See the functions and components that are part of the library
          * @returns {object} (object: All functions for this method)
-         * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
          */
         kanban: function() {
             let _TODO_ = [

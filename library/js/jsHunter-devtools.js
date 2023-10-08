@@ -30,7 +30,6 @@
      * @description Dev Tools
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.devtools = function(params) {
         return this;

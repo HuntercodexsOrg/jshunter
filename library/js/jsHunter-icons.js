@@ -30,7 +30,6 @@
      * @description Rater Plug, create a component to rating data information
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: File Handler Methods)
-     * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.icons = function(params) {
 

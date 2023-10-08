@@ -117,7 +117,7 @@ $$.loaded(function() {
     Methods
     ------------------------------------------------------------------------------------*/
 
-    /**[DONE]
+    /**
      * Set Theme
      */
     (function SetTheme() {
@@ -125,7 +125,7 @@ $$.loaded(function() {
         $$.setTheme('light');
     })();
 
-    /**[DONE]
+    /**
      * AJax (with restful support)
      */
     (function Ajax() {
@@ -175,7 +175,7 @@ $$.loaded(function() {
             });
     })();
 
-    /**[DONE]
+    /**
      * Clone
      */
     (function Clone() {
@@ -183,7 +183,7 @@ $$.loaded(function() {
         $$.clone('#jh-paged-table-tbody-tr-0').into("#jh-paged-table-tbody");
     })();
 
-    /**[DONE]
+    /**
      * Requester
      */
     (function Requester() {
@@ -191,7 +191,7 @@ $$.loaded(function() {
         console.log($$.requester("./api/data/index.php?initial=1&final=10000&db=csv"));
     })();
 
-    /**[DONE]
+    /**
      * On Submit
      */
     (function OnSubmit() {
@@ -202,12 +202,12 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Sort
      */
     (function Sort() {
         if (sort === 'off') return;
-        /*Number*/ /*[DONE]*/
+        /*Number*/
         let v_number = [11,34,500,3,0,1,2,3,4,5,6,7,8,9,10];
         // $$.log("NUMBER").print("orange");
         // $$.log(v_number).table();
@@ -215,7 +215,7 @@ $$.loaded(function() {
         // $$.log($$.sort(v_number).asNumber('asc')).table();
         // $$.log($$.sort(v_number).asNumber('desc')).table();
 
-        /*String*/ /*[DONE]*/
+        /*String*/
         let v_string = ["x","f","E","D","C","B","A","a","z", "B10", "b1", "B8", "X9", "B1"];
         // $$.log("STRING").print("orange");
         // $$.log(v_string).table();
@@ -223,7 +223,7 @@ $$.loaded(function() {
         // $$.log($$.sort(v_string).asString('asc')).table();
         // $$.log($$.sort(v_string).asString('desc')).table();
 
-        /*String: no Ascii*/ /*[DONE]*/
+        /*String: no Ascii*/
         let v_no_ascii = ["test", "óbvio", "javascript", "boné", "égua", "novo", "album"];
         // $$.log("STRING NO ASC").print("orange");
         // $$.log(v_no_ascii).table();
@@ -231,7 +231,7 @@ $$.loaded(function() {
         // $$.log($$.sort(v_no_ascii).asString('asc')).table();
         // $$.log($$.sort(v_no_ascii).asString('desc')).table();
 
-        /*String: Mixed Values*/ /*[DONE]*/
+        /*String: Mixed Values*/
         let v_mixed = ["VAL 1", "VAL 10", "VAL 12", "VAL 5", "VAL 20", "E","D","C","B","A","a",5,4,3,2,1,"_","b",0,"é","Á"];
         // $$.log("STRING MIXED").print("orange");
         // $$.log(v_mixed).table();
@@ -239,7 +239,7 @@ $$.loaded(function() {
         // $$.log($$.sort(v_mixed).asString('asc')).table();
         // $$.log($$.sort(v_mixed).asString('desc')).table();
 
-        /*Matrix: Array/Array*/ /*[DONE]*/
+        /*Matrix: Array/Array*/
         let matrix = [
             ["COL 0", "COL 1", "COL 2", "COL 3"],
             ["LINE 9", "COL 10", "LINE 4", "ÓZ 123"],
@@ -253,7 +253,7 @@ $$.loaded(function() {
         // $$.log($$.sort(matrix).asMatrix('asc', 1)).table();
         // $$.log($$.sort(matrix).asMatrix('desc', 1)).table();
 
-        /*Array/Object*/ /*[DONE]*/
+        /*Array/Object*/
         let products = [
             {id: 8, name: "Product 34", price: 6.90, stock: 14, desc: "The milk 10 product test"},
             {id: 2, name: "Product 1", price: 4.20, stock: 25, desc: "Á The 1 coffee product test"},
@@ -265,7 +265,7 @@ $$.loaded(function() {
         // $$.log($$.sort(products).asArray('asc', 'price')).table();
         // $$.log($$.sort(products).asArray('desc', 'price')).table();
 
-        /*Object/Array*/ /*[DONE]*/
+        /*Object/Array*/
         let obj_array = {
             0: ["COL  0", "COL  1", "COL  2", "COL  3"],
             1: ["LINE 9", "LINE 3", "LINE 4", "ÓZ 123"],
@@ -279,7 +279,7 @@ $$.loaded(function() {
         // $$.log($$.sort(obj_array).asObject('asc', 2)).table();
         // $$.log($$.sort(obj_array).asObject('desc', 2)).table();
 
-        /*Object/Object*/ /*[DONE]*/
+        /*Object/Object*/
         let obj_obj = {
             0: {id: 8, name: "Product 5", price: 6.90, stock: 14, desc: "The milk product test"},
             1: {id: 5, name: "Product 14", price: 7.10, stock: 3, desc: "Zez test abacate product"},
@@ -292,7 +292,7 @@ $$.loaded(function() {
         // $$.log($$.sort(obj_obj).asJson('asc', 'name')).table();
         // $$.log($$.sort(obj_obj).asJson('desc', 'name')).table();
 
-        /*Collection*/ /*[DONE]*/
+        /*Collection*/
         let collection = jsHunter.fn;
         // $$.log("Collection").print("orange");
         // $$.log(collection).table();
@@ -301,7 +301,7 @@ $$.loaded(function() {
         // $$.log($$.sort(collection).asCollection('desc')).table();
 
         $$.await(5).run(function() {
-            /*Node (DOM)*/ /*[DONE]*/
+            /*Node (DOM)*/
             // let nodes_matrix = [];
             // for (let i = 0; i < 20; i++) {
             //     nodes_matrix.push($$.toArray(jH("#jh-grid-container-values #jh-grid-line-"+i+" div").select()));
@@ -314,7 +314,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * LocalStorage: $$.storage
      */
     (function LocalStorage() {
@@ -324,7 +324,7 @@ $$.loaded(function() {
         $$.storage('@dockerized/test_1').remove();
     })();
 
-    /**[DONE]
+    /**
      * Copy And Paste: $$.copy
      */
     (function CopyPaste() {
@@ -339,7 +339,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Has (key in object)
      */
     (function HasKey() {
@@ -348,7 +348,7 @@ $$.loaded(function() {
         console.log($$.has('name').in(obj));
     })();
 
-    /**[DONE]
+    /**
      * Insert [before,after]
      */
     (function Insert() {
@@ -363,7 +363,7 @@ $$.loaded(function() {
         $$.insert(_new_element_).last('#jh-gallery-thumbs-menu');
     })();
 
-    /**[DONE]
+    /**
      * Promise
      */
     (function Promise() {
@@ -446,7 +446,7 @@ $$.loaded(function() {
             .then([firstRace, finalize, rollback]);
     })();
 
-    /**[DONE]
+    /**
      * Password
      */
     (function Password() {
@@ -455,7 +455,7 @@ $$.loaded(function() {
         $$.password("#jh-pass").mouseclick();
     })();
 
-    /**[DONE]
+    /**
      * Rand
      */
     (function Rand() {
@@ -464,7 +464,7 @@ $$.loaded(function() {
         $$.rand(0, 100).between();
     })();
 
-    /**[DONE]
+    /**
      * Repeat
      */
     (function Repeat() {
@@ -485,7 +485,7 @@ $$.loaded(function() {
         console.log($$.repeat(function(){return $$.rand(1,100).inclusive()}, 3).asJson());
     })();
 
-    /**[DONE]
+    /**
      * Form [Serialized]
      */
     (function Form() {
@@ -526,7 +526,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * MD5
      */
     (function MD5() {
@@ -534,7 +534,7 @@ $$.loaded(function() {
         $$.log($$.md5("test")).print("orange");
     })();
 
-    /**[DONE]
+    /**
      * Basename
      */
     (function Basename() {
@@ -547,7 +547,7 @@ $$.loaded(function() {
         $$.log($$.basename("/path/test.txt")).print("yellowgreen");
     })();
 
-    /**[DONE]
+    /**
      * Matcher
      */
     (function Matcher() {
@@ -596,7 +596,7 @@ $$.loaded(function() {
 
     })();
 
-    /**[DONE]
+    /**
      * Bubble
      */
     (function Bubble() {
@@ -611,7 +611,7 @@ $$.loaded(function() {
         console.log(bb.result(), bb.changes());
     })();
 
-    /**[DONE]
+    /**
      * Optimize
      */
     (function Optimize() {
@@ -634,7 +634,7 @@ $$.loaded(function() {
         console.log(bl.toString());
     })();
 
-    /**[DONE]
+    /**
      * Array Map
      */
     (function ArrayMap() {
@@ -655,7 +655,7 @@ $$.loaded(function() {
         console.log($$.arrayMap(m).keys(k).collection());
     })();
 
-    /**[DONE]
+    /**
      * CSV Map
      */
     (function CSVMap() {
@@ -702,7 +702,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Serialize [Extension]
      */
     (function Serialize() {
@@ -717,7 +717,7 @@ $$.loaded(function() {
         $$.serialize(args, false);
     })();
 
-    /**[DONE]
+    /**
      * Open
      */
     (function Open() {
@@ -744,7 +744,7 @@ $$.loaded(function() {
         }).write("jsHunter is a javascript library...");
     })();
 
-    /**[DONE]
+    /**
      * Redirect
      */
     (function Redirect() {
@@ -764,7 +764,7 @@ $$.loaded(function() {
     Components and Extension
     ------------------------------------------------------------------------------------*/
 
-    /**[DONE]
+    /**
      * Presenter
      */
     (function Presenter() {
@@ -783,7 +783,7 @@ $$.loaded(function() {
             'This was a sample');
     })();
 
-    /**[DONE]
+    /**
      * Typist
      */
     (function Typist() {
@@ -797,7 +797,7 @@ $$.loaded(function() {
         }).run();
     })();
 
-    /**[DONE]
+    /**
      * Alert
      */
     (function Alert() {
@@ -810,7 +810,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Confirm
      */
     (function Confirm() {
@@ -825,7 +825,7 @@ $$.loaded(function() {
         }, "myArgs");
     })();
 
-    /**[DONE]
+    /**
      * Tooltip
      */
     (function Tooltip() {
@@ -852,7 +852,7 @@ $$.loaded(function() {
         }).error();
     })();
 
-    /**[DONE]
+    /**
      * modalTheme
      */
     (function ModalTheme() {
@@ -871,7 +871,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Toaster
      */
     (function Toaster() {
@@ -945,7 +945,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Notifier
      */
     (function Notifier() {
@@ -969,7 +969,7 @@ $$.loaded(function() {
         }, "myArgs");
     })();
 
-    /**[DONE]
+    /**
      * Slider
      */
     (function Slider() {
@@ -1001,7 +1001,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Slider Box
      */
     (function SliderBox() {
@@ -1103,7 +1103,7 @@ $$.loaded(function() {
         }).run();
     })();
 
-    /**[DONE]
+    /**
      * Viewer
      */
     let type = 'pdf'; /*image, pdf, html*/
@@ -1145,7 +1145,7 @@ $$.loaded(function() {
         })();
     })();
 
-    /**[DONE]
+    /**
      * Gallery
      */
     (function Gallery() {
@@ -1164,7 +1164,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Paginate
      */
     (function Paginate() {
@@ -1202,7 +1202,7 @@ $$.loaded(function() {
         }, "myArgs");
     })();
 
-    /**[DONE]
+    /**
      * Jumper
      */
     (function Jumper() {
@@ -1218,7 +1218,7 @@ $$.loaded(function() {
         }, "myArgs");
     })();
 
-    /**[DONE]
+    /**
      * SmartPager
      */
     (function SmartPager() {
@@ -1259,7 +1259,7 @@ $$.loaded(function() {
         }, "myArgs");
     })();
 
-    /**[DONE]
+    /**
      * Paged Table
      */
     (function pagedTable() {
@@ -1346,7 +1346,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Icons
      */
     (function Icons() {
@@ -1427,7 +1427,7 @@ $$.loaded(function() {
             }).draw());
     })();
 
-    /**[DONE]
+    /**
      * Queue
      */
     (function Queue() {
@@ -1534,7 +1534,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Rater
      */
     (function Rater() {
@@ -1859,7 +1859,7 @@ $$.loaded(function() {
 
     })();
 
-    /**[DONE]
+    /**
      * Sticker
      */
     (function Sticker() {
@@ -1880,7 +1880,7 @@ $$.loaded(function() {
         }).run();
     })();
 
-    /**[DONE]
+    /**
      * Rollup
      */
     (function Rollup() {
@@ -1893,7 +1893,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * File
      */
     (function File() {
@@ -1951,7 +1951,7 @@ $$.loaded(function() {
         });
     })();
 
-    /**[DONE]
+    /**
      * Draggable
      */
     (function Draggable() {
@@ -1987,7 +1987,7 @@ $$.loaded(function() {
 
     })();
 
-    /**[DONE]
+    /**
      * Progress
      */
     (function Progress() {
@@ -2017,7 +2017,7 @@ $$.loaded(function() {
         }, 100);
     })();
 
-    /**[WORK]
+    /**
      * Grid
      */
     (function Grid() {
@@ -2034,7 +2034,7 @@ $$.loaded(function() {
             $$.grid({
                 /*Settings*/
                 debug: true,
-                theme: "default", /*default, dark, light*/
+                theme: "dark", /*default, dark, light*/
                 lang: "en",
                 target: "#div-app-grid-container", /*jh-container-fixed, div-paged-table-result*/
                 loading: true,
@@ -2382,7 +2382,7 @@ $$.loaded(function() {
 
     })();
 
-    /**[TODO]
+    /**
      * selectCloner
      */
     (function SelectCloner() {

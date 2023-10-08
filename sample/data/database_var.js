@@ -70,9 +70,9 @@ let _columns_sized_ = [
     {
         name: "product_name", width: 300, money: false, required: true
     },
-    {
+    /*{
         name: "country", width: 150, money: false, required: true
-    },
+    },*/
     {
         name: "description", width: 400, money: false, required: true
     },
@@ -94,36 +94,36 @@ let _columns_sized_ = [
     {
         name: "sap_number", width: 200, money: false, required: true
     },
-    {
+    /*{
         name: "delivery", width: 200, money: false, required: true
     },
     {
         name: "payment", width: 200, money: false, required: true
-    },
-    {
+    },*/
+    /*{
         name: "status", width: 200, money: false, required: true
     },
     {
         name: "order", width: 200, money: false, required: true
-    },
+    },*/
     {
         name: "customer", width: 250, money: false, required: true
     },
     {
         name: "address", width: 400, money: false, required: true
     },
-    {
+    /*{
         name: "phone", width: 200, money: false, required: true
     },
     {
         name: "city", width: 200, money: false, required: true
-    },
-    {
+    },*/
+    /*{
         name: "postal_code", width: 200, money: false, required: true
     },
     {
         name: "extras", width: 200, money: false, required: true
-    },
+    },*/
     {
         name: "additional", width: 300, money: false, required: true
     },

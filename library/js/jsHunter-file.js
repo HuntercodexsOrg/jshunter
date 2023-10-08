@@ -30,7 +30,6 @@
      * @description File, read a file from an <HTMLElement:input[type=file]>
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: File Handler Methods)
-     * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.file = function(params) {
 

@@ -30,7 +30,6 @@
      * @description Rater Plug, create a component to rating data information
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: File Handler Methods)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.raterPlug = function(params) {
 

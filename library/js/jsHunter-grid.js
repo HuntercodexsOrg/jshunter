@@ -30,7 +30,6 @@
      * @description Grid, create a data grid with pagination and input text to search the results contained in grid
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: The Runnable method for this component run())
-     * @status [_TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.grid = function(params) {
 

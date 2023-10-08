@@ -30,7 +30,6 @@
      * @description Payment
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.payment = function(params) {
         return this;

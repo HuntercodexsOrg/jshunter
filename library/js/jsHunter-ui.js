@@ -733,7 +733,6 @@
      * @description Modal, show a simple modal
      * @param {object} params (object: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.modal = function(params = {}) {
         try {
@@ -796,7 +795,6 @@
      * @description ModalFX, show an modal flyer
      * @param {object} params (object: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.modalFX = function(params = {}) {
 
@@ -903,7 +901,6 @@
      * @description ModalX, show an modal and use any themes available in library
      * @param {object} params (object: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.modalX = function(params = {}) {
 
@@ -1046,7 +1043,6 @@
      * @description ModalTheme, a complete and customizable modal with themes  available in the library
      * @param {object} params (object: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.modalTheme = function(params = {}) {
 
@@ -1198,7 +1194,6 @@
      * @description Tooltip, show a temporary message to error or success on process
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.tooltip = function(params = {}) {
 
@@ -1276,7 +1271,6 @@
      * @description Toaster, to show a fast messages to any purposes
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.toaster = function(params = {}) {
 
@@ -1460,7 +1454,6 @@
      * @description Alert, dialog box to show any information about any process
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.alert = function(params = {}) {
 
@@ -1566,7 +1559,6 @@
      * @param {function} callback (function: Mandatory)
      * @param {string} args (mixed: Optional)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.confirm = function(params, callback, args) {
 
@@ -1667,7 +1659,6 @@
      * @description Typist, make automatic digital text
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.typist = function(params = {}) {
 
@@ -1713,7 +1704,6 @@
      * @description Notifier, a small notifier to inform any things on the application
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.notifier = function(params = {}) {
 
@@ -1840,7 +1830,6 @@
      * @description Box, create a generic box element to show any data
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.box = function(params = {}) {
 
@@ -1994,7 +1983,6 @@
      * @description Progress Bar, create a progress bar in the current document
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.dialog = function(params = {}) {
 
@@ -2010,7 +1998,6 @@
      * @description Progress Bar, create a progress bar in the current document
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.progressBar = function(params = {}) {
 
@@ -2189,7 +2176,6 @@
      * @param {string} callback (string[:function]: Optional)
      * @param {string} args (mixed: Optional)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.presenter = function(params, callback, args) {
 
@@ -2249,7 +2235,6 @@
      * @description MPlayer (Mini Player), create a simple player to control media components
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.mplayer = function(params = {}) {
 
@@ -2379,7 +2364,6 @@
      * @description slideIn, create a generic element slide in
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.slideIn = function(params = {}) {
 
@@ -2549,7 +2533,6 @@
      * @description Slider, show a custom and simple presentation slider from IMAGES
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.slider = function(params = {}) {
 
@@ -2801,7 +2784,6 @@
      * @description SliderBox, show a custom and simple presentation slider from DIV
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.sliderBox = function(params = {}) {
 
@@ -3025,7 +3007,6 @@
      * @description Gallery, create a simple and elegant media gallery
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.gallery = function(params = {}) {
 
@@ -3809,7 +3790,6 @@
      * @description Viewer, visualize various medias types in a uniq component
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.viewer = function(params = {}) {
 
@@ -3909,7 +3889,6 @@
      * @description Editor, data edit from any <HTMLElement>
      * @param {object} params (object: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.editor = function(params = {}) {
 
@@ -4156,7 +4135,6 @@
      * @description Jumper, create a simple jumper to choose views from result in array structure
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.jumper = function(params = {}) {
 
@@ -4318,7 +4296,6 @@
      * @description Loading, inform on screen any current process
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.loading = function(params = {}) {
 
@@ -4382,7 +4359,6 @@
      * @description Progress, show a progress bar and percent + item/total on current progress
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.progress = function(params = {}) {
 
@@ -4626,7 +4602,6 @@
      * @description On Off, create a element checker on/off to forms
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.onOff = function(params = {}) {
 
@@ -4684,7 +4659,6 @@
      * @description Media Player, crate a complete media player
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.mediaPlayer = function(params = {}) {
     }
@@ -4699,7 +4673,6 @@
      * @description Textarea, create a generic element textarea to input data
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.textarea = function(params = {}) {
 
@@ -4794,7 +4767,6 @@
      * @description Paginate, create a simple paginate to handler result from on requests and queries
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.paginate = function (params) {
 
@@ -5096,7 +5068,6 @@
      * @description Paginate Range, create a simple paginate to handler result from on requests and queries
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.smartPager = function (params) {
 
@@ -5422,7 +5393,6 @@
      * @param {object} params (object: Mandatory)
      * @param {array} columns (array: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.pagedTable = function(params, columns) {
 
@@ -5773,7 +5743,6 @@
      * @description Select Over, clone, destroy and replace an <HTMLElement:select> with optimized options
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.selectOver = function(params = {}) {
 
@@ -5837,7 +5806,6 @@
      * @description Draggable, Drag and Drop events handlers
      * @param {string|object} params (string|object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.draggable = function(params = {}) {
 
@@ -6272,7 +6240,6 @@
      * @description Sticker, show a little helper localized in left side of screen
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.sticker = function(params = {}) {
 
@@ -6489,7 +6456,6 @@
      * @description Roll Up, got to the top screen
      * @param {object} params (object: Mandatory)
      * @returns {null} (null: Alone)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.rollup = function(params = {}) {
 
@@ -6584,7 +6550,6 @@
      * @description Create a queue process to handler items
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: All functions for this method)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.queue = function(params = {}) {
 
@@ -6968,7 +6933,6 @@
      * @param {string} text (string: Mandatory)
      * @param {boolean} execute (boolean: Optional)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.exceptBox = function(text, execute = false) {
         if (text && execute) {
@@ -6987,7 +6951,6 @@
      * @description Set a default Theme to global use
      * @param {string} theme (string: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.setTheme = function(theme) {
         _setGlobalTheme(theme);
@@ -6998,7 +6961,6 @@
      * @description Get Theme to global use
      * @param {string} theme (string: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.getTheme = function(theme) {
         return _getTheme(theme);
@@ -7008,7 +6970,6 @@
      * @description Set a default Language to global use
      * @param {string} lang (string: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.setLang = function(lang) {
         _setGlobalLang(lang);
@@ -7019,7 +6980,6 @@
      * @description Get Language to global use
      * @param {string} lang (string: Mandatory)
      * @returns {this} (this: Current instanceOf jsHunter)
-     * @status [_TODO][_WORK][_DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype.getLang = function(lang) {
         return _getLang(lang);
@@ -7029,7 +6989,6 @@
      * @description MethodName, Description method
      * @param {object} params (object: Mandatory)
      * @returns {object} (object: Description)
-     * @status [TODO][WORK][DONE][DOCUMENTED][CANCEL][WAIT]
      */
     jsHunter.prototype._METHOD_NAME_MODEL_ = function(params = {}) {
 
