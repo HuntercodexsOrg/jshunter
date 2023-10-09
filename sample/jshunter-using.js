@@ -1,6 +1,8 @@
 
 //http://192.168.15.13:38081/jshunter/sample/index.html
 
+let api_url = "http://localhost:38080/php81/api";
+
 let current_page = (window.location.href).toString().split("/").pop();
 
 /*FUNCTIONS*/
@@ -188,7 +190,7 @@ $$.loaded(function() {
      */
     (function Requester() {
         if (requester === 'off') return;
-        console.log($$.requester("./api/data/index.php?initial=1&final=10000&db=csv"));
+        console.log($$.requester(api_url + "/index.php?initial=1&final=10000&db=csv"));
     })();
 
     /**
@@ -508,12 +510,12 @@ $$.loaded(function() {
             console.log("SERIALIZE");
             console.log(data_serial2);
 
-            /*let data_form_sub = $$.form('#app-form-test').attach("./api/data/files.php", false); /!*send files*!/
+            /*let data_form_sub = $$.form('#app-form-test').attach(api_url + "/files.php", false); /!*send files*!/
 
             let data_form = $$.form('#app-form-test').attach(); /!*send files*!/*/
 
             /*$$.ajax({
-                url: "./api/data/files.php",
+                url: api_url + "/files.php",
                 data: data_form,
                 dataType: 'json'
             }).post(
@@ -1293,11 +1295,11 @@ $$.loaded(function() {
                         active: true,
 
                         /*Query String*/
-                        // url: "./api/data/index.php?db=csv&product_name=Product&limit=10000",
+                        // url: api_url + "/index.php?db=csv&product_name=Product&limit=10000",
                         // params: "db=csv&product_name=Product&limit=10000",
 
                         /*Json*/
-                        url: "./api/data/index.php",
+                        url: api_url + "/index.php",
                         params: {db: "csv", product_name: _product_name_, limit: _limit_},
 
                         data_type: "json", /*Tipo de dado esperado do servidor*/
@@ -2034,10 +2036,12 @@ $$.loaded(function() {
             $$.grid({
                 /*Settings*/
                 debug: true,
-                theme: "dark", /*default, dark, light*/
+                theme: "default", /*default, dark, light*/
                 lang: "en",
                 target: "#div-app-grid-container", /*jh-container-fixed, div-paged-table-result*/
                 loading: true,
+                cors: false,
+                restful: false,
 
                 /*Identify the PK in data structure grid*/
                 identify_key: {
@@ -2048,8 +2052,8 @@ $$.loaded(function() {
 
                 /*If mode Default (processing by application)*/
                 renderize: {
-                    active: true,
-                    data: _data_object2_ /*_data_object_, _data_object2_, _data_array_, _data_array2_*/
+                    active: false,
+                    data: "" /*_data_object_, _data_object2_, _data_array_, _data_array2_*/
                 },
 
                 /*If mode Ajax (automatic query by smartPager)*/
@@ -2057,11 +2061,11 @@ $$.loaded(function() {
                     active: false,
 
                     /*Query String*/
-                    // url: "./api/data/index.php?db=csv&product_name=Product&limit=10000",
+                    // url: api_url + "/index.php?db=csv&product_name=Product&limit=10000",
                     // params: "db=csv&product_name=Product&limit=10000",
 
                     /*Json*/
-                    url: "./api/data/index.php",
+                    url: api_url + "/index.php",
                     params: {db: "csv", product_name: _product_name_, limit: _limit_},
 
                     data_type: "json", /*Tipo de dado esperado do servidor*/
@@ -2070,16 +2074,16 @@ $$.loaded(function() {
 
                 /*When paginate.backend_paginate is true, use this*/
                 query_paginate: {
-                    active: false,
+                    active: true,
 
                     /*Query String*/
-                    // url: "./api/data/paginate.php?db=csv&product_name=Product",
+                    // url: api_url + "/paginate.php?db=csv&product_name=Product",
                     // params: "db=csv&product_name=Product",
 
                     /*Json*/
-                    url: "./api/data/paginate.php",
+                    url: api_url + "/paginate.php",
                     params: {db: "csv", product_name: _product_name_, page: _page_, limit: _limit_},
-                    url_export: "./api/data/index.php",
+                    url_export: api_url + "/index.php",
 
                     data_type: "json", /*Tipo de dado esperado do servidor*/
                     content_type: "application/json" /*Tipo de dados a ser enviado para o servidor*/
@@ -2096,7 +2100,7 @@ $$.loaded(function() {
                             name: "new",
                             action: function(resolve, reject, args) {
                                 $$.ajax({
-                                    url: "./api/data/new.php",
+                                    url: api_url + "/new.php",
                                     data: JSON.stringify(args),
                                     dataType: 'json',
                                     contentType: "application/json"
@@ -2131,7 +2135,7 @@ $$.loaded(function() {
                             name: "import",
                             action: function(resolve, reject, args) {
                                 $$.ajax({
-                                    url: "./api/data/save.php",
+                                    url: api_url + "/save.php",
                                     data: JSON.stringify(args),
                                     dataType: 'json',
                                     contentType: "application/json"
@@ -2152,7 +2156,7 @@ $$.loaded(function() {
                             },
                             rollback: function(resolve, reject, args) {
                                 $$.ajax({
-                                    url: "./api/data/rollback.php",
+                                    url: api_url + "/rollback.php",
                                     data: JSON.stringify(args),
                                     dataType: 'json',
                                     contentType: "application/json"
@@ -2326,7 +2330,7 @@ $$.loaded(function() {
                 },
 
                 icons: {
-                    active: false,
+                    active: true,
                     columns: [
                         // {col: 2},
                         // {col: 2, src: "./media/icon"},
@@ -2336,7 +2340,7 @@ $$.loaded(function() {
                 },
 
                 rating: {
-                    active: false,
+                    active: true,
                     column: 5,
                     star_size: 14,
                     star_color: "#ff4400",

@@ -56,6 +56,8 @@
         let rating = ($$.has('rating').in(params)) ? params.rating : {};
         let paginate = ($$.has('paginate').in(params)) ? params.paginate : false;
         let columns = ($$.has('columns').in(params)) ? params.columns : [];
+        let cors = ($$.has('cors').in(params)) ? params.cors : false;
+        let restful = ($$.has('restful').in(params)) ? params.restful : false;
 
         /**
          * Global Settings
@@ -1446,7 +1448,7 @@
                 $$.ajax({
                     url: query_renderize.url,
                     async: true,
-                    cors: true,
+                    cors: cors,
                     data: query_renderize.params || "",
                     dataType: query_renderize.data_type || "json",
                     contentType: query_renderize.content_type || "application/json",
@@ -1501,7 +1503,7 @@
                 $$.ajax({
                     url: query_paginate.url,
                     async: true,
-                    cors: true,
+                    cors: cors,
                     data: query_paginate.params || "",
                     dataType: query_paginate.data_type || "json",
                     contentType: query_paginate.content_type || "application/json",
@@ -1544,7 +1546,7 @@
                 $$.ajax({
                     url: query_paginate.url_export,
                     async: true,
-                    cors: true,
+                    cors: cors,
                     data: query_paginate.params || "",
                     dataType: query_paginate.data_type || "json",
                     contentType: query_paginate.content_type || "application/json",
